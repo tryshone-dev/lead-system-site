@@ -1,5 +1,3 @@
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/xvzdlvye";
-
 export function ContactForm() {
   const submitted =
     typeof window !== "undefined" &&
@@ -21,7 +19,7 @@ export function ContactForm() {
         <p className="mt-3 text-sm text-slate-500">No tech setup. No commitment. Just a quick walkthrough.</p>
       </div>
 
-      <form className="space-y-5" action={FORMSPREE_ENDPOINT} method="POST">
+      <form className="space-y-5" action="https://formspree.io/f/xvzdlvye" method="POST">
         <input type="hidden" name="_subject" value="New MedSpa Lead" />
         <input type="hidden" name="_next" value={successRedirect} />
 
@@ -99,7 +97,7 @@ export function ContactForm() {
 
         {submitted ? (
           <div className="rounded-[24px] border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm leading-6 text-emerald-800">
-            Thanks. Your demo request has been submitted successfully. This frontend flow is ready to connect to your CRM or backend.
+            Thanks. Your demo request has been submitted successfully.
           </div>
         ) : null}
       </form>
