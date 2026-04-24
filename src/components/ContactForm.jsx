@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 
 const initialForm = {
   name: "",
-  business: "",
+  practice: "",
   email: "",
   interest: "Botox and injectables",
   message: "",
@@ -16,7 +17,7 @@ function validateField(name, value) {
     if (trimmedValue.length < 2) return "Name must be at least 2 characters.";
   }
 
-  if (name === "business") {
+  if (name === "practice") {
     if (!trimmedValue) return "Please enter your med spa or practice name.";
   }
 
@@ -38,7 +39,7 @@ function validateField(name, value) {
 function getErrors(form) {
   return {
     name: validateField("name", form.name),
-    business: validateField("business", form.business),
+    practice: validateField("practice", form.practice),
     email: validateField("email", form.email),
     message: validateField("message", form.message),
   };
@@ -48,8 +49,18 @@ export function ContactForm() {
   const [form, setForm] = useState(initialForm);
   const [touched, setTouched] = useState({});
   const [errors, setErrors] = useState({});
-  const [successMessage, setSuccessMessage] = useState("");
+  const [submitError, setSubmitError] = useState("");
+  const [state, handleSubmit] = useForm("xvzdlvye");
   const hasVisibleErrors = Object.values(errors).some(Boolean);
+
+  useEffect(() => {
+    if (state.succeeded) {
+      setForm(initialForm);
+      setTouched({});
+      setErrors({});
+      setSubmitError("");
+    }
+  }, [state.succeeded]);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -73,29 +84,33 @@ export function ContactForm() {
     }));
   }
 
-  function handleSubmit(event) {
+  async function onSubmit(event) {
     event.preventDefault();
 
     const nextErrors = getErrors(form);
     setErrors(nextErrors);
     setTouched({
       name: true,
-      business: true,
+      practice: true,
       email: true,
       message: true,
     });
 
     const isValid = !Object.values(nextErrors).some(Boolean);
     if (!isValid) {
-      setSuccessMessage("");
+      setSubmitError("");
       return;
     }
 
-    setSuccessMessage("Thanks. Your demo request has been submitted successfully. This frontend flow is ready to connect to your CRM or backend.");
-    setForm(initialForm);
-    setTouched({});
-    setErrors({});
+    setSubmitError("");
+    await handleSubmit(event);
   }
+
+  useEffect(() => {
+    if (state.errors?.length) {
+      setSubmitError("Something went wrong. Please try again or email us directly.");
+    }
+  }, [state.errors]);
 
   function fieldClass(name) {
     const hasError = Boolean(errors[name] && touched[name]);
@@ -125,7 +140,9 @@ export function ContactForm() {
         <p className="mt-3 text-sm text-slate-500">No tech setup. No commitment. Just a quick walkthrough.</p>
       </div>
 
-      <form className="space-y-5" onSubmit={handleSubmit} noValidate>
+      <form className="space-y-5" onSubmit={onSubmit} noValidate>
+        <input type="hidden" name="_subject" value="New MedSpa AI Lead" />
+
         <div className="grid gap-5 sm:grid-cols-2">
           <label className="block">
             <span className="text-sm font-medium text-slate-700">Name</span>
@@ -146,15 +163,15 @@ export function ContactForm() {
             <span className="text-sm font-medium text-slate-700">Med spa or practice</span>
             <input
               type="text"
-              name="business"
-              value={form.business}
+              name="practice"
+              value={form.practice}
               onChange={handleChange}
               onBlur={handleBlur}
               placeholder="Luna Aesthetics"
-              className={fieldClass("business")}
-              aria-invalid={Boolean(touched.business && errors.business)}
+              className={fieldClass("practice")}
+              aria-invalid={Boolean(touched.practice && errors.practice)}
             />
-            <FieldError name="business" />
+            <FieldError name="practice" />
           </label>
         </div>
 
@@ -172,6 +189,7 @@ export function ContactForm() {
               aria-invalid={Boolean(touched.email && errors.email)}
             />
             <FieldError name="email" />
+            <ValidationError prefix="Email" field="email" errors={state.errors} className="mt-2 text-sm text-rose-700" />
           </label>
 
           <label className="block">
@@ -203,14 +221,16 @@ export function ContactForm() {
             aria-invalid={Boolean(touched.message && errors.message)}
           />
           <FieldError name="message" />
+          <ValidationError prefix="Message" field="message" errors={state.errors} className="mt-2 text-sm text-rose-700" />
         </label>
 
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <button
             type="submit"
-            className="inline-flex w-full items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_40px_rgba(32,24,31,0.16)] transition hover:-translate-y-0.5 hover:bg-slate-800 sm:w-auto"
+            disabled={state.submitting}
+            className="inline-flex w-full items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_40px_rgba(32,24,31,0.16)] transition hover:-translate-y-0.5 hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
           >
-            Show me the missed lead flow
+            {state.submitting ? "Sending..." : "Show me the missed lead flow"}
           </button>
           <p className="text-sm text-slate-500">Takes 10 minutes. No setup required.</p>
         </div>
@@ -221,9 +241,15 @@ export function ContactForm() {
           </div>
         ) : null}
 
-        {successMessage ? (
+        {submitError ? (
+          <div className="rounded-[24px] border border-rose-200 bg-rose-50 px-4 py-3 text-sm leading-6 text-rose-800">
+            {submitError}
+          </div>
+        ) : null}
+
+        {state.succeeded ? (
           <div className="rounded-[24px] border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm leading-6 text-emerald-800">
-            {successMessage}
+            Thanks. Your demo request has been submitted successfully. This frontend flow is ready to connect to your CRM or backend.
           </div>
         ) : null}
       </form>
