@@ -1,13 +1,4 @@
 export function ContactForm() {
-  const submitted =
-    typeof window !== "undefined" &&
-    new URLSearchParams(window.location.search).get("submitted") === "true";
-
-  const successRedirect =
-    typeof window !== "undefined"
-      ? `${window.location.origin}${window.location.pathname}?submitted=true#contact`
-      : "";
-
   return (
     <div className="rounded-[36px] border border-white/80 bg-white/90 p-6 shadow-[0_28px_80px_rgba(96,73,88,0.1)] backdrop-blur sm:p-8">
       <div className="mb-6">
@@ -21,7 +12,7 @@ export function ContactForm() {
 
       <form className="space-y-5" action="https://formspree.io/f/xvzdlvye" method="POST">
         <input type="hidden" name="_subject" value="New MedSpa Lead" />
-        <input type="hidden" name="_next" value={successRedirect} />
+        <input type="hidden" name="_next" value="https://lead-system-site.vercel.app/thanks.html" />
 
         <div className="grid gap-5 sm:grid-cols-2">
           <label className="block">
@@ -94,12 +85,6 @@ export function ContactForm() {
           </button>
           <p className="text-sm text-slate-500">Takes 10 minutes. No setup required.</p>
         </div>
-
-        {submitted ? (
-          <div className="rounded-[24px] border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm leading-6 text-emerald-800">
-            Thanks. Your demo request has been submitted successfully.
-          </div>
-        ) : null}
       </form>
     </div>
   );
