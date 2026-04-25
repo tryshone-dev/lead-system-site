@@ -11,7 +11,7 @@ export function ContactForm() {
       </div>
 
       <form className="space-y-5" action="https://formspree.io/f/xvzdlvye" method="POST">
-        <input type="hidden" name="_subject" value="New MedSpa Lead" />
+        <input type="hidden" name="_subject" value="New Revenue After Dark Lead" />
         <input type="hidden" name="_next" value="https://lead-system-site.vercel.app/thanks.html" />
 
         <div className="grid gap-5 sm:grid-cols-2">

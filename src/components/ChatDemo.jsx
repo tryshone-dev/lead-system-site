@@ -196,7 +196,7 @@ export function ChatDemo() {
       <div className="overflow-hidden rounded-[36px] border border-white/75 bg-slate-950 p-5 shadow-[0_28px_90px_rgba(91,66,83,0.12)] sm:p-6">
         <div className="flex items-center justify-between border-b border-white/10 pb-4">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-200">MedSpa AI Demo</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-200">Revenue After Dark Demo</p>
             <p className="mt-1 text-sm text-slate-400">Front-end chatbot preview for your website</p>
           </div>
           <div className="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-300">
