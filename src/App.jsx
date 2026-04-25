@@ -405,7 +405,7 @@ export default function App() {
         <main id="top">
           <section className="grid gap-14 py-18 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:py-24">
             <div>
-              <Badge>AI Reception for Med Spas</Badge>
+              <Badge>After-Hours Lead Recovery for Med Spas</Badge>
               <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-[0.9] tracking-tight text-slate-900 sm:text-6xl lg:text-[4.8rem]">
                 Every missed after-hours lead is a booked appointment you lost.
               </h1>
