@@ -53,28 +53,21 @@ const proofPoints = [
 const workflow = [
   {
     step: "1",
-    title: "A lead visits your site after hours",
-    description: "They arrive when your front desk is closed, unavailable, or tied up with patients.",
+    title: "A prospect asks about a treatment",
+    description:
+      "They ask about Botox, laser, pricing, availability, or booking from your website or social channel.",
   },
   {
     step: "2",
-    title: "They ask a question or show interest",
-    description: "It could be Botox, filler, laser, skincare, pricing, or a booking-related question.",
+    title: "MedSpa AI responds immediately",
+    description:
+      "The conversation stays warm while the system captures key details and intent.",
   },
   {
     step: "3",
-    title: "Revenue After Dark responds instantly",
-    description: "The first reply happens while the lead is still engaged and ready to keep talking.",
-  },
-  {
-    step: "4",
-    title: "The conversation moves toward booking",
-    description: "The system captures intent and moves the lead toward the next consultation step.",
-  },
-  {
-    step: "5",
-    title: "You wake up to qualified inquiries or scheduled consults",
-    description: "Your team starts with cleaner context and a better chance of converting the lead.",
+    title: "Your team follows up with context",
+    description:
+      "Staff receives a warmer lead, cleaner notes, and a much easier path to booking the consultation.",
   },
 ];
 
@@ -172,7 +165,7 @@ const pricingPlans = [
 
 const faqs = [
   {
-    question: "What kinds of inquiries can Revenue After Dark handle?",
+    question: "What kinds of inquiries can MedSpa AI handle?",
     answer:
       "Common med spa lead conversations including Botox, fillers, laser hair removal, skincare, pricing questions, consultation requests, appointment timing, and general booking support.",
   },
@@ -328,11 +321,11 @@ function MobileStickyCTA() {
     <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/80 bg-white/92 px-4 py-3 shadow-[0_-12px_40px_rgba(74,58,69,0.12)] backdrop-blur md:hidden">
       <div className="mx-auto flex max-w-lg items-center justify-between gap-3">
         <div className="min-w-0">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-rose-700">Revenue After Dark</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-rose-700">MedSpa AI</p>
           <p className="truncate text-sm text-slate-600">Turn after-hours leads into booked consults</p>
         </div>
         <PrimaryButton href="#contact" className="shrink-0 px-5 py-3">
-          Watch how it works
+          Book a 10-minute demo
         </PrimaryButton>
       </div>
     </div>
@@ -377,10 +370,8 @@ export default function App() {
               <span className="font-serif text-2xl leading-none text-rose-700">M</span>
             </div>
             <div>
-              <p className="text-base font-semibold tracking-[0.02em]">Revenue After Dark</p>
-              <p className="max-w-[18rem] text-xs leading-5 text-slate-500">
-                Capturing booked appointments while your competitors are offline.
-              </p>
+              <p className="text-base font-semibold tracking-[0.02em]">MedSpa AI</p>
+              <p className="text-xs uppercase tracking-[0.24em] text-slate-500">Lead Conversion Assistant</p>
             </div>
           </a>
 
@@ -406,21 +397,19 @@ export default function App() {
         <main id="top">
           <section className="grid gap-14 py-18 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:py-24">
             <div>
-              <Badge>After-Hours Lead Recovery</Badge>
+              <Badge>AI Reception for Med Spas</Badge>
               <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-[0.9] tracking-tight text-slate-900 sm:text-6xl lg:text-[4.8rem]">
-                After-hours leads don’t wait.
-                <br />
-                They book with whoever responds first.
+                Every missed after-hours message can become a booked appointment for your competitor.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
-                Revenue After Dark responds instantly to inbound inquiries and moves them toward a booked consultation — even while you’re closed.
+                If someone asks about Botox, laser, or booking at 9PM and your team replies the next morning, they may already be gone. MedSpa AI responds instantly, captures the lead, and moves them toward a consult while they’re still ready.
               </p>
               <p className="mt-4 max-w-2xl text-sm font-medium leading-6 text-slate-600">
-                Capturing booked appointments while your competitors are offline.
+                After-hours inquiries are often your warmest leads. Silence lets them shop somewhere else.
               </p>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <PrimaryButton href="#demo">Watch how it works</PrimaryButton>
+                <PrimaryButton href="#contact">See the 10-minute demo</PrimaryButton>
                 <SecondaryButton href="#demo">Check your missed lead flow</SecondaryButton>
               </div>
               <p className="mt-4 text-sm font-medium text-slate-600">After-hours silence costs bookings every week.</p>
@@ -523,18 +512,16 @@ export default function App() {
 
           <section className="py-10 sm:py-14">
             <div className="rounded-[38px] border border-white/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.9),rgba(249,241,245,0.88),rgba(243,247,249,0.88))] p-8 shadow-[0_24px_70px_rgba(102,76,91,0.08)] sm:p-10">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-rose-700">Proof</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-rose-700">The Reality</p>
               <h2 className="mt-5 max-w-3xl font-serif text-4xl leading-[1.02] tracking-tight text-slate-900 sm:text-5xl">
-                Most med spas miss after-hours opportunities.
+                Last night, someone in your area asked a med spa how much Botox costs.
               </h2>
               <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
-                Not because patients aren’t interested — but because no one responds fast enough.
+                If they did not get a fast answer, they probably kept searching. The med spa that responds first usually controls the next step.
               </p>
-              <ul className="mt-6 grid gap-3 text-sm font-medium text-slate-700 sm:grid-cols-3 sm:gap-4">
-                <li className="rounded-[22px] border border-white/80 bg-white/80 px-4 py-4">Leads go cold in minutes</li>
-                <li className="rounded-[22px] border border-white/80 bg-white/80 px-4 py-4">Patients move on to the next provider</li>
-                <li className="rounded-[22px] border border-white/80 bg-white/80 px-4 py-4">The booking goes to whoever replies first</li>
-              </ul>
+              <p className="mt-4 max-w-3xl text-sm font-medium leading-7 text-slate-600 sm:text-base">
+                Most local practices are competing for the same high-intent leads. Speed decides who keeps them.
+              </p>
             </div>
           </section>
 
@@ -594,7 +581,7 @@ export default function App() {
             <SectionHeading
               eyebrow="Where Leads Slip Away"
               title="The missed-conversion problem usually starts in the channels med spas rely on most."
-              description="Revenue After Dark is designed for the moments where response delays quietly cost consultations, from website chats to DMs and missed calls."
+              description="MedSpa AI is designed for the moments where response delays quietly cost consultations, from website chats to DMs and missed calls."
             />
 
             <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -608,7 +595,7 @@ export default function App() {
             <SectionHeading
               eyebrow="The Solution"
               title="After-hours lead recovery for med spas."
-              description="Revenue After Dark gives your practice a polished first response when your team is busy, closed, or unavailable, so more inquiries become qualified consult opportunities."
+              description="MedSpa AI gives your practice a polished first response when your team is busy, closed, or unavailable, so more inquiries become qualified consult opportunities."
             />
 
             <p className="mt-6 max-w-3xl text-sm font-medium text-slate-600">
@@ -621,30 +608,10 @@ export default function App() {
               ))}
             </div>
 
-            <div className="mt-14">
-              <SectionHeading
-                eyebrow="How It Works"
-                title="How it works"
-                description="A simple flow designed to respond fast, hold attention, and move after-hours interest toward booking."
-              />
-            </div>
             <div className="mt-8 grid gap-6 lg:grid-cols-3">
               {workflow.map((item) => (
                 <WorkflowCard key={item.step} {...item} />
               ))}
-            </div>
-          </section>
-
-          <section className="py-12 sm:py-16">
-            <div className="rounded-[36px] border border-white/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.9),rgba(248,242,246,0.9),rgba(243,247,249,0.88))] p-8 shadow-[0_24px_70px_rgba(102,76,91,0.08)] sm:p-10">
-              <h2 className="max-w-3xl font-serif text-4xl leading-[1.02] tracking-tight text-slate-900 sm:text-5xl">
-                You’re already getting traffic.
-                <br />
-                You’re just not capturing it.
-              </h2>
-              <div className="mt-8">
-                <PrimaryButton href="#demo">Watch how it works</PrimaryButton>
-              </div>
             </div>
           </section>
 
@@ -695,7 +662,7 @@ export default function App() {
               description="Click a common med spa question below to see how the system responds, captures information, and keeps the conversation moving toward a consultation."
             />
             <p className="mt-6 max-w-3xl text-sm font-medium text-slate-600">
-              This is what happens when a lead doesn’t get a response.
+              This is the exact moment most med spas lose the booking.
             </p>
 
             <div className="mt-12">
