@@ -35,7 +35,7 @@ const demoFlows = [
       },
       {
         role: "assistant",
-        text: "Thank you. I’ve noted your Botox interest and contact details. The next step is to request your consultation so we can confirm pricing, treatment recommendations, and appointment options.",
+        text: "Perfect — your consultation request is submitted. A team member will confirm your time shortly.",
       },
     ],
     ctaLabel: "Request Botox Consultation",
@@ -74,7 +74,7 @@ const demoFlows = [
       },
       {
         role: "assistant",
-        text: "Perfect. I’ve captured your details for laser hair removal. The best next step is to request your consultation so the team can review treatment areas, pricing, and the soonest openings.",
+        text: "Perfect — your consultation request is submitted. A team member will confirm your time shortly.",
       },
     ],
     ctaLabel: "Book Laser Consultation",
@@ -113,7 +113,7 @@ const demoFlows = [
       },
       {
         role: "assistant",
-        text: "Amazing. I’ve captured your booking details and marked this as a high-intent request. Tap the button below to move forward with your consultation request.",
+        text: "Perfect — your consultation request is submitted. A team member will confirm your time shortly.",
       },
     ],
     ctaLabel: "Book This Week",
@@ -213,7 +213,7 @@ export function ChatDemo() {
         <div className="mt-6 rounded-[24px] border border-white/10 bg-white/6 p-4">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">Booking CTA</p>
           <p className="mt-2 text-sm leading-6 text-slate-300">
-            After capturing the lead, the bot closes with a clear next step so the visitor knows exactly how to move forward.
+            Lead captured. Consultation in motion.
           </p>
           <a
             href="#contact"
