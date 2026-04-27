@@ -4,9 +4,12 @@ const initialForm = {
   name: "",
   business: "",
   email: "",
+  phone: "",
   interest: "Botox and injectables",
   message: "",
 };
+
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xvzdlvye";
 
 function validateField(name, value) {
   const trimmedValue = value.trim();
@@ -27,6 +30,10 @@ function validateField(name, value) {
     }
   }
 
+  if (name === "phone") {
+    if (!trimmedValue) return "Please enter your phone number.";
+  }
+
   if (name === "message") {
     if (!trimmedValue) return "Please share a quick note about your goals.";
     if (trimmedValue.length < 12) return "Please add a little more detail so we can follow up well.";
@@ -40,6 +47,7 @@ function getErrors(form) {
     name: validateField("name", form.name),
     business: validateField("business", form.business),
     email: validateField("email", form.email),
+    phone: validateField("phone", form.phone),
     message: validateField("message", form.message),
   };
 }
@@ -49,6 +57,7 @@ export function ContactForm() {
   const [touched, setTouched] = useState({});
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState("");
+  const [submitError, setSubmitError] = useState("");
   const hasVisibleErrors = Object.values(errors).some(Boolean);
 
   function handleChange(event) {
@@ -73,7 +82,7 @@ export function ContactForm() {
     }));
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
 
     const nextErrors = getErrors(form);
@@ -82,19 +91,48 @@ export function ContactForm() {
       name: true,
       business: true,
       email: true,
+      phone: true,
       message: true,
     });
 
     const isValid = !Object.values(nextErrors).some(Boolean);
     if (!isValid) {
       setSuccessMessage("");
+      setSubmitError("");
       return;
     }
 
-    setSuccessMessage("Thanks. Your demo request has been submitted successfully. This frontend flow is ready to connect to your CRM or backend.");
-    setForm(initialForm);
-    setTouched({});
-    setErrors({});
+    setSuccessMessage("");
+    setSubmitError("");
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          business: form.business,
+          email: form.email,
+          phone: form.phone,
+          interest: form.interest,
+          message: form.message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      setSuccessMessage("Thanks — your demo request has been sent.");
+      setForm(initialForm);
+      setTouched({});
+      setErrors({});
+    } catch {
+      setSubmitError("Something went wrong sending your request. Please try again.");
+    }
   }
 
   function fieldClass(name) {
@@ -175,6 +213,23 @@ export function ContactForm() {
           </label>
 
           <label className="block">
+            <span className="text-sm font-medium text-slate-700">Phone</span>
+            <input
+              type="tel"
+              name="phone"
+              value={form.phone}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              placeholder="(555) 123-4567"
+              className={fieldClass("phone")}
+              aria-invalid={Boolean(touched.phone && errors.phone)}
+            />
+            <FieldError name="phone" />
+          </label>
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2">
+          <label className="block">
             <span className="text-sm font-medium text-slate-700">Main area of interest</span>
             <select
               name="interest"
@@ -218,6 +273,12 @@ export function ContactForm() {
         {hasVisibleErrors ? (
           <div className="rounded-[22px] border border-rose-200 bg-rose-50 px-4 py-3 text-sm leading-6 text-rose-800">
             Please fix the highlighted fields before submitting.
+          </div>
+        ) : null}
+
+        {submitError ? (
+          <div className="rounded-[24px] border border-rose-200 bg-rose-50 px-4 py-3 text-sm leading-6 text-rose-800">
+            {submitError}
           </div>
         ) : null}
 
