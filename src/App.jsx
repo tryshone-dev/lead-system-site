@@ -293,7 +293,7 @@ function PricingCard({
 
       <div className="mt-8">
         <PrimaryButton href="#contact" className="w-full sm:w-auto">
-          Request Demo
+          Get Started
         </PrimaryButton>
       </div>
     </article>
@@ -417,7 +417,7 @@ export default function App() {
               </p>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <PrimaryButton href="#contact">See how many bookings you’re losing</PrimaryButton>
+                <PrimaryButton href="#demo">Book a Demo</PrimaryButton>
                 <SecondaryButton href="#demo">Check your missed lead flow</SecondaryButton>
               </div>
               <p className="mt-4 text-sm font-medium text-slate-600">After-hours silence costs bookings every week.</p>
@@ -753,7 +753,7 @@ export default function App() {
                 You’re just not capturing them.
               </h2>
               <div className="mt-8">
-                <PrimaryButton href="#contact">See how many bookings you’re losing</PrimaryButton>
+                <PrimaryButton href="#contact">Book a Demo</PrimaryButton>
               </div>
             </div>
           </section>
