@@ -3,6 +3,7 @@ import { ChatDemo } from "./components/ChatDemo";
 import { ContactForm } from "./components/ContactForm";
 import { FAQItem } from "./components/FAQItem";
 import { FeatureCard } from "./components/FeatureCard";
+import { PrimaryButton } from "./components/PrimaryButton";
 import { SectionHeading } from "./components/SectionHeading";
 
 const painPoints = [
@@ -300,19 +301,6 @@ function PricingCard({
   );
 }
 
-function PrimaryButton({ href, children, className = "" }) {
-  const label = children || "Book a Demo";
-
-  return (
-    <a
-      href={href}
-      className={`inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_40px_rgba(32,24,31,0.18)] transition hover:-translate-y-0.5 hover:bg-slate-800 ${className}`}
-    >
-      {label}
-    </a>
-  );
-}
-
 function SecondaryButton({ href, children }) {
   return (
     <a
@@ -386,6 +374,9 @@ export default function App() {
           </a>
 
           <nav className="hidden items-center gap-6 text-sm text-slate-600 md:flex">
+            <a href="/after-hours-ai-med-spa" className="transition hover:text-slate-900">
+              After-Hours AI
+            </a>
             <a href="#problem" className="transition hover:text-slate-900">
               Problem
             </a>
