@@ -569,7 +569,7 @@ export default function App() {
                   </div>
                 </div>
 
-                <div className="mt-6 rounded-[26px] bg-slate-900 p-6 text-white">
+                <div className="mt-6 rounded-[26px] bg-rose-600 p-6 text-white">
                   <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-400">Conversion Risk</p>
                   <p className="mt-3 text-3xl font-semibold tracking-tight">Fast intent needs a fast answer.</p>
                   <p className="mt-3 text-sm leading-6 text-slate-300">
