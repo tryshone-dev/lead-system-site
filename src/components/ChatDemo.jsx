@@ -19,7 +19,7 @@ const demoFlows = [
       },
       {
         role: "assistant",
-        text: "Botox pricing can vary based on the treatment area and the number of units needed, so the best next step is a quick consultation. I can help you get pricing and availability started right now. What name should I put on your request?",
+        text: "Botox pricing depends on the treatment area, but most clients book a quick consultation to get exact pricing and lock in the next available opening. I can help you do that right now. What name should I put on your request?",
       },
       {
         role: "prospect",
@@ -27,7 +27,7 @@ const demoFlows = [
       },
       {
         role: "assistant",
-        text: "Perfect, Olivia. What is the best email and phone number for your consultation request so our team can send pricing details and the soonest openings?",
+        text: "Perfect, Olivia. What’s the best email and phone number so we can send your pricing details and hold the soonest available opening for you?",
       },
       {
         role: "prospect",
@@ -38,7 +38,7 @@ const demoFlows = [
         text: "Perfect — your consultation request is submitted. A team member will confirm your time shortly.",
       },
     ],
-    ctaLabel: "Request Consultation",
+    ctaLabel: "Check Availability",
   },
   {
     id: "laser-hair-removal",
