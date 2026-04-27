@@ -35,13 +35,13 @@ const solutionCards = [
     eyebrow: "Lead capture",
     title: "Collect the details your team needs",
     description:
-      "Capture service interest, name, email, phone, urgency, and booking intent before the lead loses momentum.",
+      "Capture contact information, service interest, and booking intent before the lead loses momentum.",
   },
   {
     eyebrow: "Booking support",
     title: "Move prospects toward consultations",
     description:
-      "Guide interested visitors toward a consultation request without sounding robotic, pushy, or generic.",
+      "Guide website visitors toward a consultation request without sounding robotic, pushy, or generic.",
   },
 ];
 
@@ -54,13 +54,13 @@ const proofPoints = [
 const workflow = [
   {
     step: "1",
-    title: "Lead messages your site after hours",
+    title: "A website visitor shows interest after hours",
     description:
-      "A prospective patient reaches out while your front desk is closed, unavailable, or tied up.",
+      "A prospective patient lands on your website and asks about services, pricing, or booking.",
   },
   {
     step: "2",
-    title: "Revenue After Dark responds instantly",
+    title: "Revenue After Dark responds instantly on the website",
     description:
       "The first reply happens in minutes while the lead is still engaged and ready to take the next step.",
   },
@@ -72,9 +72,9 @@ const workflow = [
   },
   {
     step: "4",
-    title: "You wake up to scheduled consults",
+    title: "Your team wakes up to captured leads ready for follow-up",
     description:
-      "Your team starts the day with qualified inquiries and a clearer path to follow-up.",
+      "Your team starts the day with cleaner contact details and a faster path to follow-up.",
   },
 ];
 
@@ -86,22 +86,22 @@ const touchpoints = [
       "When someone asks about services, timing, or pricing, the reply happens fast enough to keep them engaged instead of bouncing.",
   },
   {
-    eyebrow: "Instagram or DM Leads",
-    title: "Keep social interest from becoming delayed follow-up",
+    eyebrow: "Service pages",
+    title: "Capture treatment interest while visitors are still browsing",
     description:
-      "Direct messages often come after hours. A fast response helps hold attention while interest is still high.",
+      "When someone compares Botox, filler, laser, or skincare options on your site, a fast response helps turn browsing into a captured lead.",
   },
   {
-    eyebrow: "Missed calls",
-    title: "Create a better path after the call goes unanswered",
+    eyebrow: "Pricing questions",
+    title: "Keep pricing interest from turning into a lost lead",
     description:
-      "If a prospect cannot reach the front desk right away, you still need a polished next step that keeps them moving toward consultation.",
+      "Visitors asking about cost or timing are often closest to booking. A fast website response helps capture them before they leave.",
   },
   {
-    eyebrow: "Delayed replies",
-    title: "Protect consultation momentum before it fades",
+    eyebrow: "Follow-up speed",
+    title: "Help your team follow up before the lead goes cold",
     description:
-      "The longer a response takes, the more likely the prospect compares competitors or loses urgency to book.",
+      "Once contact information is captured, your team has a better chance of reaching out while intent is still high.",
   },
 ];
 
@@ -177,9 +177,9 @@ const faqs = [
       "Common med spa lead conversations including Botox, fillers, laser hair removal, skincare, pricing questions, consultation requests, appointment timing, and general booking support.",
   },
   {
-    question: "Does it replace our front desk team?",
+    question: "Does this handle missed phone calls?",
     answer:
-      "No. It supports your front desk by capturing leads when they are busy, closed, or unavailable. Your team still handles the relationship and final booking.",
+      "No. This is focused on website lead capture. It helps engage visitors who land on your site, collect their info, and keep the conversation moving. Missed-call text-back can be added later as a separate layer.",
   },
   {
     question: "Can it connect to our CRM or booking process?",
@@ -318,7 +318,7 @@ function MobileStickyCTA() {
       <div className="mx-auto flex max-w-lg items-center justify-between gap-3">
         <div className="min-w-0">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-rose-700">Revenue After Dark</p>
-          <p className="truncate text-sm text-slate-600">Turn after-hours leads into booked consults</p>
+          <p className="truncate text-sm text-slate-600">Capture website leads before they leave</p>
         </div>
         <PrimaryButton href="#contact" className="shrink-0 px-5 py-3">
           Book a Demo
@@ -368,7 +368,7 @@ export default function App() {
             <div>
               <p className="text-base font-semibold tracking-[0.02em]">Revenue After Dark</p>
               <p className="text-xs uppercase tracking-[0.24em] text-slate-500">
-                Capturing booked appointments while your competitors are offline.
+                Instant website lead response for med spas.
               </p>
             </div>
           </a>
@@ -400,13 +400,13 @@ export default function App() {
             <div>
               <Badge>After-Hours Lead Recovery for Med Spas</Badge>
               <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-[0.9] tracking-tight text-slate-900 sm:text-6xl lg:text-[4.8rem]">
-                Every missed after-hours lead is a booked appointment you lost.
+                Capture website leads before they book somewhere else.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
-                If someone messages your med spa after hours and doesn’t get a response within minutes, they don’t wait. They book somewhere else.
+                Revenue After Dark helps med spas engage website visitors instantly, collect their contact information, and keep the conversation moving before the lead goes cold.
               </p>
               <p className="mt-4 max-w-2xl text-sm font-medium leading-6 text-slate-600">
-                Revenue After Dark responds instantly, captures the lead, and moves them toward a booked consultation while they’re still ready.
+                Fast follow-up helps capture interest while the visitor is still on your site and ready to hear back.
               </p>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -584,7 +584,7 @@ export default function App() {
             <SectionHeading
               eyebrow="Where Leads Slip Away"
               title="The missed-conversion problem usually starts in the channels med spas rely on most."
-              description="Revenue After Dark is designed for the moments where response delays quietly cost consultations, from website chats to DMs and missed calls."
+              description="Revenue After Dark is designed for the moments where website response delays quietly cost consultations."
             />
 
             <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -598,7 +598,7 @@ export default function App() {
             <SectionHeading
               eyebrow="The Solution"
               title="After-hours lead recovery for med spas."
-              description="Revenue After Dark gives your practice a polished first response when your team is busy, closed, or unavailable, so more inquiries become qualified consult opportunities."
+              description="Revenue After Dark gives your practice a polished website response when visitors show interest, so more inquiries become qualified consult opportunities."
             />
 
             <p className="mt-6 max-w-3xl text-sm font-medium text-slate-600">
@@ -670,7 +670,7 @@ export default function App() {
             <SectionHeading
               eyebrow="Chatbot Demo"
               title="See what happens when a lead gets an instant answer."
-              description="Click a common med spa question below to see how the system responds, captures information, and keeps the conversation moving toward a consultation."
+              description="See how fast response turns a high-intent website visitor into a captured lead your team can follow up with."
             />
             <p className="mt-6 max-w-3xl text-sm font-medium text-slate-600">
               This is the exact moment you lose the booking.
@@ -679,6 +679,9 @@ export default function App() {
             <div className="mt-12">
               <ChatDemo />
             </div>
+            <p className="mt-6 max-w-3xl text-sm leading-7 text-slate-600">
+              This does not replace your phone system. It captures website visitors who may leave without calling, then helps your team follow up faster.
+            </p>
           </section>
 
           <section id="faq" className="py-16 sm:py-20">

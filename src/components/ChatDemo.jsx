@@ -213,7 +213,7 @@ export function ChatDemo() {
         <div className="mt-6 rounded-[24px] border border-white/10 bg-white/6 p-4">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">Booking CTA</p>
           <p className="mt-2 text-sm leading-6 text-slate-300">
-            Lead captured. Consultation in motion.
+            Lead captured. Instant follow-up in motion.
           </p>
           <a
             href="#contact"

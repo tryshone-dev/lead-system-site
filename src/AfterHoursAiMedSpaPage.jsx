@@ -60,7 +60,7 @@ function MobileStickyCTA() {
       <div className="mx-auto flex max-w-lg items-center justify-between gap-3">
         <div className="min-w-0">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-rose-700">Revenue After Dark</p>
-          <p className="truncate text-sm text-slate-600">After-hours AI for med spas</p>
+          <p className="truncate text-sm text-slate-600">Instant website lead response for med spas.</p>
         </div>
         <PrimaryButton href="/#contact" className="shrink-0 px-5 py-3">
           Book a Demo
@@ -85,7 +85,7 @@ export default function AfterHoursAiMedSpaPage() {
             <div>
               <p className="text-base font-semibold tracking-[0.02em]">Revenue After Dark</p>
               <p className="text-xs uppercase tracking-[0.24em] text-slate-500">
-                Capturing booked appointments while your competitors are offline.
+                Instant website lead response for med spas.
               </p>
             </div>
           </a>
@@ -188,7 +188,7 @@ export default function AfterHoursAiMedSpaPage() {
             <SectionHeading
               eyebrow="The Solution"
               title="The Solution: After-Hours AI That Responds Instantly"
-              description="Revenue After Dark acts as your front desk after hours."
+              description="Revenue After Dark captures website visitors after hours and helps your team follow up before the lead goes cold."
             />
 
             <p className="mt-8 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
