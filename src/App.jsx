@@ -301,12 +301,14 @@ function PricingCard({
 }
 
 function PrimaryButton({ href, children, className = "" }) {
+  const label = children || "Book a Demo";
+
   return (
     <a
       href={href}
       className={`inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_40px_rgba(32,24,31,0.18)] transition hover:-translate-y-0.5 hover:bg-slate-800 ${className}`}
     >
-      {children}
+      {label}
     </a>
   );
 }
@@ -331,7 +333,7 @@ function MobileStickyCTA() {
           <p className="truncate text-sm text-slate-600">Turn after-hours leads into booked consults</p>
         </div>
         <PrimaryButton href="#contact" className="shrink-0 px-5 py-3">
-          See how many bookings you’re losing
+          Book a Demo
         </PrimaryButton>
       </div>
     </div>
