@@ -80,7 +80,7 @@ export default function AfterHoursAiMedSpaPage() {
         <header className="flex items-center justify-between gap-4 py-5">
           <a href="/" className="flex items-center gap-3 text-slate-900">
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/75 bg-white/85 shadow-sm">
-              <span className="font-serif text-2xl leading-none text-rose-700">M</span>
+              <span className="font-serif text-2xl leading-none text-rose-700">R</span>
             </div>
             <div>
               <p className="text-base font-semibold tracking-[0.02em]">Revenue After Dark</p>
