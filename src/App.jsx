@@ -8,19 +8,19 @@ import { SectionHeading } from "./components/SectionHeading";
 
 const painPoints = [
   {
-    title: "High-intent questions happen after hours",
+    title: "Late-night Botox questions",
     description:
-      "Botox, laser, filler, and booking questions often come in at night or on weekends, exactly when most teams are unavailable.",
+      "These visitors are often ready to book and looking for a reason to stay on your site.",
   },
   {
-    title: "Manual follow-up creates delay",
+    title: "Weekend pricing inquiries",
     description:
-      "Even great front desks cannot respond instantly during treatments, calls, breaks, and peak hours.",
+      "If they do not get a response within minutes, they start looking somewhere else.",
   },
   {
-    title: "Slow response lowers booked consults",
+    title: "After-work consultation requests",
     description:
-      "If a lead waits until tomorrow, they often keep shopping instead of waiting for your answer.",
+      "By the next morning, the lead may already be gone.",
   },
 ];
 
@@ -29,13 +29,13 @@ const solutionCards = [
     eyebrow: "Lost lead prevention",
     title: "Respond before the lead goes somewhere else",
     description:
-      "Keep website visitors engaged before they leave your site or keep shopping.",
+      "Keep high-intent website visitors engaged before they leave your site or book somewhere else.",
   },
   {
     eyebrow: "Lead capture",
     title: "Capture the lead before they leave your site",
     description:
-      "Collect contact information and service interest while the visitor is still paying attention.",
+      "Collect contact details while the visitor is still engaged enough to submit interest.",
   },
   {
     eyebrow: "Booking support",
@@ -54,27 +54,27 @@ const proofPoints = [
 const workflow = [
   {
     step: "1",
-    title: "A potential patient shows interest — but no one responds",
+    title: "A potential patient visits your site after hours",
     description:
-      "A prospective patient lands on your website and starts looking for a reason to stay engaged.",
+      "They are interested enough to ask a question instead of leaving right away.",
   },
   {
     step: "2",
-    title: "Revenue After Dark responds before the lead goes cold",
+    title: "They ask about services, pricing, or availability",
     description:
-      "The lead gets an answer while they are still deciding whether to stay or book somewhere else.",
+      "The visitor is deciding whether to stay engaged or move on to another med spa.",
   },
   {
     step: "3",
-    title: "The conversation moves toward booking",
+    title: "Revenue After Dark responds before they leave",
     description:
-      "Key details are captured and the lead is guided toward a consultation while intent is still high.",
+      "The reply helps hold attention before the lead goes cold or books somewhere else.",
   },
   {
     step: "4",
-    title: "Your team wakes up to leads that would have been lost",
+    title: "Your team receives a captured lead ready for follow-up",
     description:
-      "Your team starts the day with contact details and clear follow-up opportunities instead of silence.",
+      "The lead is already captured so your team can follow up while interest is still high.",
   },
 ];
 
@@ -83,7 +83,7 @@ const touchpoints = [
     eyebrow: "Website inquiries",
     title: "Catch leads while they are still on your site",
     description:
-      "When someone asks about services, timing, or pricing, the reply helps keep them engaged instead of leaving.",
+      "When someone asks about services, timing, or pricing, the response gives them a reason to stay engaged.",
   },
   {
     eyebrow: "Service pages",
@@ -125,48 +125,55 @@ const testimonials = [
 
 const pricingPlans = [
   {
-    eyebrow: "Core Setup",
-    title: "Core Setup",
-    price: "$1,500",
-    priceSuffix: "one-time",
-    description: "For med spas that want a simple after-hours lead capture system installed fast.",
+    eyebrow: "Starter",
+    title: "Starter",
+    price: "$497 setup",
+    priceSuffix: "",
+    description: "",
     includes: [
-      "Custom AI chat tailored to your services",
-      "Botox, filler, laser & booking response flows",
-      "Lead capture (name, phone, email, service)",
-      "Website integration",
-      "Consultation-driven response design",
+      "Website lead capture",
+      "Service and pricing inquiry flow",
+      "Lead details sent to your team",
+      "Basic consultation request flow",
     ],
-    supportPrice: "$500/month support",
-    supportItems: [
-      "Ongoing flow optimization",
-      "Response improvements",
-      "Monthly performance review",
-      "Light troubleshooting",
-    ],
+    supportPrice: "+ $197/month",
+    supportItems: [],
+    ctaLabel: "Start with Starter",
     featured: false,
   },
   {
-    eyebrow: "Growth Setup",
-    title: "Growth Setup",
-    price: "$2,500",
-    priceSuffix: "one-time",
-    description: "For med spas that want a more complete lead recovery flow.",
+    eyebrow: "Growth",
+    title: "Growth",
+    price: "$997 setup",
+    priceSuffix: "",
+    description: "",
     includes: [
-      "Everything in Core",
-      "Advanced conversation flows",
-      "CRM or email handoff setup",
-      "Booking-focused scripting",
-      "Priority customization",
+      "Everything in Starter",
+      "Instant text follow-up layer",
+      "Lead handoff workflow",
+      "Higher-intent booking prompts",
     ],
-    supportPrice: "$750/month support",
-    supportItems: [
-      "Conversion optimization",
-      "Monthly tuning & updates",
-      "Lead handling improvements",
-      "Priority support",
-    ],
+    supportPrice: "+ $397/month",
+    supportItems: [],
+    ctaLabel: "Start with Growth",
     featured: true,
+  },
+  {
+    eyebrow: "Full Response System",
+    title: "Full Response System",
+    price: "Custom",
+    priceSuffix: "",
+    description: "",
+    includes: [
+      "Website capture",
+      "Instant text follow-up",
+      "CRM or inbox routing",
+      "Missed-call recovery can be added later",
+    ],
+    supportPrice: "For offices that want full coverage",
+    supportItems: [],
+    ctaLabel: "Talk Through Options",
+    featured: false,
   },
 ];
 
@@ -259,6 +266,7 @@ function PricingCard({
   includes,
   supportPrice,
   supportItems,
+  ctaLabel,
   featured,
 }) {
   return (
@@ -273,9 +281,9 @@ function PricingCard({
       <h3 className="mt-4 text-2xl font-semibold tracking-tight text-slate-900">{title}</h3>
       <div className="mt-4 flex items-end gap-2">
         <p className="text-4xl font-semibold tracking-tight text-slate-900">{price}</p>
-        <span className="pb-1 text-sm text-slate-500">{priceSuffix}</span>
+        {priceSuffix ? <span className="pb-1 text-sm text-slate-500">{priceSuffix}</span> : null}
       </div>
-      <p className="mt-4 text-sm leading-7 text-slate-600">{description}</p>
+      {description ? <p className="mt-4 text-sm leading-7 text-slate-600">{description}</p> : null}
 
       <ul className="mt-6 space-y-3 text-sm leading-7 text-slate-600">
         {includes.map((item) => (
@@ -283,18 +291,22 @@ function PricingCard({
         ))}
       </ul>
 
-      <div className="mt-8 rounded-[26px] border border-slate-200 bg-slate-50/85 p-5">
-        <p className="text-xl font-semibold text-slate-900">{supportPrice}</p>
-        <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-600">
-          {supportItems.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </div>
+      {supportPrice || supportItems.length ? (
+        <div className="mt-8 rounded-[26px] border border-slate-200 bg-slate-50/85 p-5">
+          {supportPrice ? <p className="text-xl font-semibold text-slate-900">{supportPrice}</p> : null}
+          {supportItems.length ? (
+            <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-600">
+              {supportItems.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          ) : null}
+        </div>
+      ) : null}
 
       <div className="mt-8">
         <PrimaryButton href="#contact" className="w-full sm:w-auto">
-          Get Started
+          {ctaLabel || "Get Started"}
         </PrimaryButton>
       </div>
     </article>
@@ -398,19 +410,19 @@ export default function App() {
         <main id="top">
           <section className="grid gap-14 py-18 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:py-24">
             <div>
-              <Badge>After-Hours Lead Recovery for Med Spas</Badge>
+              <Badge>After-Hours AI for Med Spas</Badge>
               <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-[0.9] tracking-tight text-slate-900 sm:text-6xl lg:text-[4.8rem]">
-                Capture website leads before they book somewhere else.
+                After-Hours AI for Med Spas
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
-                Revenue After Dark helps med spas engage website visitors instantly, collect their contact information, and keep the conversation moving before the lead goes cold.
+                Most med spas lose their highest-intent website leads at night. When someone asks about Botox, laser, or pricing after hours, they are ready.
               </p>
               <p className="mt-4 max-w-2xl text-sm font-medium leading-6 text-slate-600">
-                Slow follow-up gives high-intent visitors time to leave, lose interest, or book somewhere else.
+                If your team responds the next morning, that lead may already be gone.
               </p>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <PrimaryButton href="#demo">Book a Demo</PrimaryButton>
+                <PrimaryButton href="#contact">Book a Demo</PrimaryButton>
                 <SecondaryButton href="#demo">Check your missed lead flow</SecondaryButton>
               </div>
               <p className="mt-4 text-sm font-medium text-slate-600">After-hours silence costs bookings every week.</p>
@@ -531,11 +543,11 @@ export default function App() {
           <section id="problem" className="py-16 sm:py-20">
             <SectionHeading
               eyebrow="The Problem"
-              title="Your best leads often arrive when your front desk is unavailable."
-              description="By the time your team follows up the next morning, that prospect may have already compared providers, sent another message, or booked somewhere else."
+              title="The Problem: Your Best Website Leads Happen After Hours"
+              description="Med spa inquiries do not follow business hours."
             />
             <p className="mt-6 max-w-3xl text-sm font-medium text-slate-600">
-              If a prospect waits until the next morning, they usually book somewhere else first.
+              These are not casual browsers. These are ready buyers. If they do not get a response within minutes, they move to another med spa.
             </p>
 
             <div className="mt-12 grid gap-6 lg:grid-cols-[1fr_0.95fr]">
@@ -552,28 +564,25 @@ export default function App() {
               </div>
 
               <div className="rounded-[36px] border border-white/80 bg-[linear-gradient(180deg,rgba(255,255,255,0.9),rgba(246,239,244,0.9))] p-7 shadow-[0_28px_70px_rgba(104,80,93,0.1)] sm:p-8">
-                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">What Happens Without Instant Response</p>
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">What Happens Without After-Hours Coverage</p>
                 <div className="mt-6 space-y-4">
                   <div className="rounded-[24px] border border-rose-100 bg-rose-50 p-5">
-                    <p className="text-sm font-semibold text-rose-800">11:16 PM</p>
-                    <p className="mt-2 text-sm leading-6 text-rose-900">
-                      “Hi, do you offer laser hair removal packages?”
-                    </p>
-                    <p className="mt-3 text-sm leading-6 text-rose-700">No response until the next morning.</p>
+                    <p className="text-sm font-semibold text-rose-800">No response → they leave</p>
+                    <p className="mt-2 text-sm leading-6 text-rose-900">The visitor leaves your site without submitting anything.</p>
                   </div>
                   <div className="rounded-[24px] border border-slate-200 bg-white p-5">
-                    <p className="text-sm font-semibold text-slate-900">By the time staff follows up</p>
+                    <p className="text-sm font-semibold text-slate-900">Delayed response → they lose interest</p>
                     <p className="mt-2 text-sm leading-6 text-slate-600">
-                      The prospect has already compared providers, messaged a competitor, or lost the urgency to book.
+                      The longer the wait, the easier it is for the lead to drift away.
                     </p>
                   </div>
                 </div>
 
                 <div className="mt-6 rounded-[26px] bg-rose-600 p-6 text-white">
-                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-400">Conversion Risk</p>
-                  <p className="mt-3 text-3xl font-semibold tracking-tight">Fast intent needs a fast answer.</p>
+                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-300">Every missed response can become a lost booking.</p>
+                  <p className="mt-3 text-3xl font-semibold tracking-tight">Next-day follow-up → they may have already booked elsewhere</p>
                   <p className="mt-3 text-sm leading-6 text-slate-300">
-                    The lead asking the question right now is often closer to booking than the lead you follow up with tomorrow.
+                    By the time your team replies, the consultation may already belong to another med spa.
                   </p>
                 </div>
               </div>
@@ -597,18 +606,18 @@ export default function App() {
           <section id="solution" className="py-16 sm:py-20">
             <SectionHeading
               eyebrow="The Solution"
-              title="After-hours lead recovery for med spas."
-              description="Revenue After Dark gives your practice a polished website response when visitors show interest, so more inquiries become qualified consult opportunities."
+              title="After-Hours Coverage That Stops Lead Loss"
+              description="Revenue After Dark keeps high-intent website visitors engaged before they leave or book somewhere else."
             />
 
             <p className="mt-6 max-w-3xl text-sm font-medium text-slate-600">
-              The goal is simple: fewer missed conversations, more qualified consults.
+              It responds on the website, captures contact details, and moves the conversation toward a consultation request while intent is still high.
             </p>
 
             <div className="mt-12">
               <SectionHeading
                 eyebrow="How It Works"
-                title="How it works"
+                title="How It Works"
                 description="A simple flow built to respond fast and move after-hours interest toward booking."
               />
             </div>
@@ -629,23 +638,38 @@ export default function App() {
           <section className="py-16 sm:py-20">
             <div className="grid gap-6 rounded-[40px] border border-white/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.9),rgba(239,247,249,0.88),rgba(251,241,245,0.92))] p-8 shadow-[0_28px_90px_rgba(91,71,86,0.1)] lg:grid-cols-[0.9fr_1.1fr] lg:p-10">
               <div>
-                <Badge>Why It Converts Better</Badge>
+                <Badge>Benefits</Badge>
                 <h2 className="mt-5 font-serif text-4xl leading-tight text-slate-900 sm:text-5xl">
-                  Premium brand feel. Faster response. Stronger booking momentum.
+                  What This Means for Your Med Spa
                 </h2>
+                <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+                  After-hours speed changes what happens to your warmest leads.
+                </p>
               </div>
 
               <div className="grid gap-5 sm:grid-cols-2">
                 <div className="rounded-[28px] border border-white/80 bg-white/84 p-6">
-                  <p className="text-lg font-semibold text-slate-900">Polished tone</p>
+                  <p className="text-lg font-semibold text-slate-900">Capture leads you would normally lose</p>
                   <p className="mt-3 text-sm leading-6 text-slate-600">
-                    Responses feel warm and elevated, aligned with a luxury service experience instead of generic chatbot copy.
+                    Stop letting interested website visitors disappear before your team even sees them.
                   </p>
                 </div>
                 <div className="rounded-[28px] border border-white/80 bg-white/84 p-6">
-                  <p className="text-lg font-semibold text-slate-900">Lead-ready handoff</p>
+                  <p className="text-lg font-semibold text-slate-900">Increase booked consultations without more traffic</p>
                   <p className="mt-3 text-sm leading-6 text-slate-600">
-                    Your staff gets cleaner details, clearer intent, and a better starting point for converting inquiries into appointments.
+                    Get more from the visitors already landing on your site instead of paying for more clicks.
+                  </p>
+                </div>
+                <div className="rounded-[28px] border border-white/80 bg-white/84 p-6">
+                  <p className="text-lg font-semibold text-slate-900">Turn late-night interest into real revenue</p>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">
+                    When interest shows up after hours, you still have a chance to capture it before it fades.
+                  </p>
+                </div>
+                <div className="rounded-[28px] border border-white/80 bg-white/84 p-6">
+                  <p className="text-lg font-semibold text-slate-900">Stay competitive in a crowded local market</p>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">
+                    If you are not responding, another med spa will.
                   </p>
                 </div>
               </div>
@@ -670,7 +694,7 @@ export default function App() {
             <SectionHeading
               eyebrow="Chatbot Demo"
               title="See what happens when a lead gets an instant answer."
-              description="See how staying engaged turns a high-intent website visitor into a captured lead your team can follow up with."
+              description="See how fast response turns a high-intent website visitor into a captured lead your team can follow up with."
             />
             <p className="mt-6 max-w-3xl text-sm font-medium text-slate-600">
               This is the exact moment you lose the booking.
@@ -700,9 +724,9 @@ export default function App() {
 
           <section className="py-16 sm:py-20">
             <SectionHeading
-              eyebrow="Simple Starter Pricing"
-              title="Simple pricing. Built around results."
-              description="If this system helps recover even a few missed consultations each month, it pays for itself."
+              eyebrow="PRICING"
+              title="Simple pricing for after-hours lead response"
+              description="Start with website lead capture. Add instant text follow-up when you are ready."
             />
 
             <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -710,10 +734,6 @@ export default function App() {
                 <PricingCard key={plan.eyebrow} {...plan} />
               ))}
             </div>
-
-            <p className="mt-8 max-w-3xl text-sm font-medium leading-7 text-slate-600">
-              Start simple. If the system helps recover even a few missed consultations, it can pay for itself quickly.
-            </p>
           </section>
 
           <section id="contact" className="py-16 sm:py-20">
@@ -744,10 +764,11 @@ export default function App() {
           <section className="py-12 sm:py-16">
             <div className="rounded-[38px] border border-white/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.9),rgba(250,244,247,0.9),rgba(243,247,249,0.88))] p-8 shadow-[0_24px_70px_rgba(102,76,91,0.08)] sm:p-10">
               <h2 className="max-w-3xl font-serif text-4xl leading-[1.02] tracking-tight text-slate-900 sm:text-5xl">
-                You’re already paying for leads.
-                <br />
-                You’re just not capturing them.
+                Stop Letting Ready Leads Wait Until Morning
               </h2>
+              <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+                If you are not responding in minutes, someone else is.
+              </p>
               <div className="mt-8">
                 <PrimaryButton href="#contact">Book a Demo</PrimaryButton>
               </div>
