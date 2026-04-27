@@ -157,7 +157,7 @@ export function ChatDemo() {
       <div className="rounded-[34px] border border-white/75 bg-white/86 p-6 shadow-[0_24px_70px_rgba(101,77,92,0.08)] backdrop-blur">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-rose-700">Lead-loss preview</p>
         <p className="mt-3 text-sm leading-6 text-slate-600">
-          Click a common med spa question below to see how fast response keeps a high-intent prospect from drifting to another provider.
+          Click a common med spa question below to see how the right response keeps a high-intent prospect from drifting to another provider.
         </p>
 
         <div className="mt-5 space-y-3">

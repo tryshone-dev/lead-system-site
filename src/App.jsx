@@ -26,22 +26,22 @@ const painPoints = [
 
 const solutionCards = [
   {
-    eyebrow: "Instant AI replies",
-    title: "Answer treatment questions immediately",
+    eyebrow: "Lost lead prevention",
+    title: "Respond before the lead goes somewhere else",
     description:
-      "Respond to Botox, filler, laser, skincare, pricing, and booking questions in a polished tone that feels aligned with your brand.",
+      "Keep website visitors engaged before they leave your site or keep shopping.",
   },
   {
     eyebrow: "Lead capture",
-    title: "Collect the details your team needs",
+    title: "Capture the lead before they leave your site",
     description:
-      "Capture contact information, service interest, and booking intent before the lead loses momentum.",
+      "Collect contact information and service interest while the visitor is still paying attention.",
   },
   {
     eyebrow: "Booking support",
-    title: "Move prospects toward consultations",
+    title: "Turn interest into booked consultations",
     description:
-      "Guide website visitors toward a consultation request without sounding robotic, pushy, or generic.",
+      "Keep the conversation moving before the lead goes cold or books somewhere else.",
   },
 ];
 
@@ -54,15 +54,15 @@ const proofPoints = [
 const workflow = [
   {
     step: "1",
-    title: "A website visitor shows interest after hours",
+    title: "A potential patient shows interest — but no one responds",
     description:
-      "A prospective patient lands on your website and asks about services, pricing, or booking.",
+      "A prospective patient lands on your website and starts looking for a reason to stay engaged.",
   },
   {
     step: "2",
-    title: "Revenue After Dark responds instantly on the website",
+    title: "Revenue After Dark responds before the lead goes cold",
     description:
-      "The first reply happens in minutes while the lead is still engaged and ready to take the next step.",
+      "The lead gets an answer while they are still deciding whether to stay or book somewhere else.",
   },
   {
     step: "3",
@@ -72,9 +72,9 @@ const workflow = [
   },
   {
     step: "4",
-    title: "Your team wakes up to captured leads ready for follow-up",
+    title: "Your team wakes up to leads that would have been lost",
     description:
-      "Your team starts the day with cleaner contact details and a faster path to follow-up.",
+      "Your team starts the day with contact details and clear follow-up opportunities instead of silence.",
   },
 ];
 
@@ -83,19 +83,19 @@ const touchpoints = [
     eyebrow: "Website inquiries",
     title: "Catch leads while they are still on your site",
     description:
-      "When someone asks about services, timing, or pricing, the reply happens fast enough to keep them engaged instead of bouncing.",
+      "When someone asks about services, timing, or pricing, the reply helps keep them engaged instead of leaving.",
   },
   {
     eyebrow: "Service pages",
     title: "Capture treatment interest while visitors are still browsing",
     description:
-      "When someone compares Botox, filler, laser, or skincare options on your site, a fast response helps turn browsing into a captured lead.",
+      "When someone compares Botox, filler, laser, or skincare options on your site, the right response keeps them from drifting away.",
   },
   {
     eyebrow: "Pricing questions",
     title: "Keep pricing interest from turning into a lost lead",
     description:
-      "Visitors asking about cost or timing are often closest to booking. A fast website response helps capture them before they leave.",
+      "Visitors asking about cost or timing are often closest to booking. If no one responds, they usually keep shopping.",
   },
   {
     eyebrow: "Follow-up speed",
@@ -346,7 +346,7 @@ export default function App() {
       booking: {
         label: "Booking",
         title: "Support the moment when a lead is ready to schedule",
-        body: "Help ready-to-book prospects share preferences and contact details so your team can close the loop faster.",
+        body: "Help ready-to-book prospects share preferences and contact details before they give up or go elsewhere.",
       },
     }),
     []
@@ -406,7 +406,7 @@ export default function App() {
                 Revenue After Dark helps med spas engage website visitors instantly, collect their contact information, and keep the conversation moving before the lead goes cold.
               </p>
               <p className="mt-4 max-w-2xl text-sm font-medium leading-6 text-slate-600">
-                Fast follow-up helps capture interest while the visitor is still on your site and ready to hear back.
+                Slow follow-up gives high-intent visitors time to leave, lose interest, or book somewhere else.
               </p>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -447,10 +447,10 @@ export default function App() {
                   <div>
                     <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-700">Live Lead Snapshot</p>
                     <h2 className="mt-2 text-2xl font-semibold text-slate-900 sm:text-[1.8rem]">
-                      What a fast response looks like when a lead is ready to book
+                      What lead recovery looks like when a visitor is about to leave
                     </h2>
                     <p className="mt-3 max-w-md text-sm leading-6 text-slate-600">
-                      Fast follow-up helps hold attention, capture intent, and keep the conversation moving toward consultation instead of comparison shopping.
+                      The goal is to keep the visitor engaged before they go cold or book somewhere else.
                     </p>
                   </div>
                   <div className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
@@ -670,7 +670,7 @@ export default function App() {
             <SectionHeading
               eyebrow="Chatbot Demo"
               title="See what happens when a lead gets an instant answer."
-              description="See how fast response turns a high-intent website visitor into a captured lead your team can follow up with."
+              description="See how staying engaged turns a high-intent website visitor into a captured lead your team can follow up with."
             />
             <p className="mt-6 max-w-3xl text-sm font-medium text-slate-600">
               This is the exact moment you lose the booking.

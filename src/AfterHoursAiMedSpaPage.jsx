@@ -16,7 +16,7 @@ const riskPoints = [
 const workflow = [
   "A prospect visits your site after hours",
   "They ask a question about services or pricing",
-  "Your AI responds instantly with a polished answer",
+  "They stay engaged instead of leaving for another med spa",
   "The conversation guides them toward booking a consult",
 ];
 
