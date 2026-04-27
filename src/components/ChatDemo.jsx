@@ -97,7 +97,7 @@ const demoFlows = [
       },
       {
         role: "assistant",
-        text: "We’d be happy to help with that. I can collect your details now so our team can match you with the soonest consultation options. What name should I add to your request?",
+        text: "Yes — we can help with that. We can check the soonest availability and hold a spot for you this week. I can get that started right now. What name should I put on your request?",
       },
       {
         role: "prospect",
@@ -105,7 +105,7 @@ const demoFlows = [
       },
       {
         role: "assistant",
-        text: "Thanks, Ava. What is the best email and phone number for your booking request? I’ll make sure the team knows you are looking for something this week.",
+        text: "Got it, Ava. What’s the best email and phone number so we can send your options and lock in the soonest available appointment for you?",
       },
       {
         role: "prospect",
@@ -116,7 +116,7 @@ const demoFlows = [
         text: "Perfect — your consultation request is submitted. A team member will confirm your time shortly.",
       },
     ],
-    ctaLabel: "Book This Week",
+    ctaLabel: "Check This Week’s Availability",
   },
 ];
 
