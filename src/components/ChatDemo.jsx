@@ -38,7 +38,7 @@ const demoFlows = [
         text: "Perfect — your consultation request is submitted. A team member will confirm your time shortly.",
       },
     ],
-    ctaLabel: "Request Botox Consultation",
+    ctaLabel: "Request Consultation",
   },
   {
     id: "laser-hair-removal",
