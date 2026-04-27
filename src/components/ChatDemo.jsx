@@ -58,7 +58,7 @@ const demoFlows = [
       },
       {
         role: "assistant",
-        text: "Yes, we do. We can help with laser hair removal consultations and answer questions about treatment areas, sessions, and next steps. To make sure the team follows up well, what is your name?",
+        text: "Yes, we do. Most clients book a quick consultation to go over treatment areas, pricing, and lock in the next available session. I can help you get that set up right now. What name should I put on your request?",
       },
       {
         role: "prospect",
@@ -66,7 +66,7 @@ const demoFlows = [
       },
       {
         role: "assistant",
-        text: "Lovely to meet you, Maya. What is the best email and phone number for your consultation request? Once we have that, we can help you move toward availability and package details.",
+        text: "Nice to meet you, Maya. What’s the best email and phone number so we can send your consultation details and hold the soonest available appointment for you?",
       },
       {
         role: "prospect",
@@ -77,7 +77,7 @@ const demoFlows = [
         text: "Perfect — your consultation request is submitted. A team member will confirm your time shortly.",
       },
     ],
-    ctaLabel: "Book Laser Consultation",
+    ctaLabel: "Check Availability",
   },
   {
     id: "book-this-week",
