@@ -412,13 +412,10 @@ export default function App() {
             <div>
               <Badge>After-Hours AI for Med Spas</Badge>
               <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-[0.9] tracking-tight text-slate-900 sm:text-6xl lg:text-[4.8rem]">
-                After-Hours AI for Med Spas
+                You’re Losing Ready-to-Book Clients After 5PM
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
-                Most med spas lose their highest-intent website leads at night. When someone asks about Botox, laser, or pricing after hours, they are ready.
-              </p>
-              <p className="mt-4 max-w-2xl text-sm font-medium leading-6 text-slate-600">
-                If your team responds the next morning, that lead may already be gone.
+                When someone asks about Botox, laser, or pricing at night, they are ready. If your team responds the next morning, they may have already booked somewhere else.
               </p>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
