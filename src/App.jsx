@@ -418,7 +418,7 @@ export default function App() {
                 You’re Losing Ready-to-Book Clients After 5PM
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
-                When someone asks about Botox, laser, or pricing at night, they are ready. If your team responds the next morning, they may have already booked somewhere else.
+                When someone asks about Botox, laser, or pricing at night, they are ready to book. If your team responds the next morning, they may have already booked somewhere else.
               </p>
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -426,7 +426,7 @@ export default function App() {
                 <SecondaryButton href="#demo">See It On Your Site</SecondaryButton>
               </div>
               <p className="mt-4 text-sm font-medium text-slate-600">After-hours silence is costing you bookings every week.</p>
-              <p className="mt-2 text-sm text-slate-500">No setup. No commitment. Just a quick walkthrough.</p>
+              <p className="mt-2 text-sm text-slate-500">No setup. No commitment. Just a quick walkthrough to see it on your site.</p>
 
               <ul className="mt-8 grid gap-3 text-sm text-slate-700 sm:grid-cols-3 sm:gap-4">
                 {heroBullets.map((item) => (
