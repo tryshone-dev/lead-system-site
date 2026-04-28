@@ -398,6 +398,9 @@ export default function App() {
             <a href="#demo" className="transition hover:text-slate-900">
               Demo
             </a>
+            <a href="#pricing" className="transition hover:text-slate-900">
+              Pricing
+            </a>
             <a href="#faq" className="transition hover:text-slate-900">
               FAQ
             </a>
@@ -420,10 +423,10 @@ export default function App() {
 
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <PrimaryButton href="#contact">Book a Demo</PrimaryButton>
-                <SecondaryButton href="#demo">Check your missed lead flow</SecondaryButton>
+                <SecondaryButton href="#demo">See It On Your Site</SecondaryButton>
               </div>
-              <p className="mt-4 text-sm font-medium text-slate-600">After-hours silence costs bookings every week.</p>
-              <p className="mt-2 text-sm text-slate-500">No tech setup. No commitment. Just a quick walkthrough.</p>
+              <p className="mt-4 text-sm font-medium text-slate-600">After-hours silence is costing you bookings every week.</p>
+              <p className="mt-2 text-sm text-slate-500">No setup. No commitment. Just a quick walkthrough.</p>
 
               <ul className="mt-8 grid gap-3 text-sm text-slate-700 sm:grid-cols-3 sm:gap-4">
                 {heroBullets.map((item) => (
@@ -719,7 +722,7 @@ export default function App() {
             </div>
           </section>
 
-          <section className="py-16 sm:py-20">
+          <section id="pricing" className="py-16 sm:py-20">
             <SectionHeading
               eyebrow="PRICING"
               title="Simple pricing for after-hours lead response"
