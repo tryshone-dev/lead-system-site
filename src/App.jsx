@@ -46,9 +46,18 @@ const solutionCards = [
 ];
 
 const proofPoints = [
-  { value: "< 60s", label: "Typical first response across website chats and after-hours inquiries" },
-  { value: "24/7", label: "Coverage for evenings, weekends, and the hours your team is offline" },
-  { value: "More consults", label: "A lead flow built to recover conversations before they disappear" },
+  {
+    title: "Instant response",
+    description: "Visitors get a reply while they’re still on your site, not the next day.",
+  },
+  {
+    title: "Always on",
+    description: "Nights, weekends, and after-hours inquiries are handled automatically.",
+  },
+  {
+    title: "More consults",
+    description: "Turn late-night questions into real appointments instead of lost leads.",
+  },
 ];
 
 const workflow = [
@@ -60,7 +69,7 @@ const workflow = [
   },
   {
     step: "2",
-    title: "The system responds instantly on the website",
+    title: "Visitors get an instant response while they’re still on your site",
     description:
       "The conversation starts while the visitor is still paying attention.",
   },
@@ -72,7 +81,7 @@ const workflow = [
   },
   {
     step: "4",
-    title: "Your team receives a warmer lead ready for follow-up",
+    title: "Your team gets a ready-to-book lead with details captured",
     description:
       "The handoff happens with context while intent is still fresh.",
   },
@@ -81,16 +90,35 @@ const workflow = [
 const outcomeComparison = {
   without: [
     "Inquiry comes in after hours",
-    "No one responds right away",
-    "Lead loses interest or books elsewhere",
+    "No response",
+    "Visitor leaves",
+    "Booking lost",
   ],
   with: [
     "Inquiry comes in",
-    "Website responds instantly",
-    "Lead details are captured",
-    "Your team follows up with context",
+    "Instant response",
+    "Details captured",
+    "Consult booked",
   ],
 };
+
+const localSeoCards = [
+  {
+    title: "For Michigan Med Spas",
+    description:
+      "Built for clinics in Michigan, Metro Detroit, Dearborn, West Bloomfield, and surrounding areas that want better after-hours lead capture.",
+  },
+  {
+    title: "For High-Intent Treatments",
+    description:
+      "Works for Botox, filler, laser, skin, body contouring, and consultation-based inquiries.",
+  },
+  {
+    title: "For More Booked Consults",
+    description:
+      "Helps turn website visitors into captured leads your team can follow up with.",
+  },
+];
 
 const touchpoints = [
   {
@@ -215,9 +243,9 @@ const faqs = [
 ];
 
 const heroBullets = [
-  "Respond before they drift",
-  "Capture consult intent instantly",
-  "Turn night inquiries into next-day follow-up",
+  "Respond before they leave",
+  "Capture intent immediately",
+  "Convert interest into bookings",
 ];
 
 function Badge({ children }) {
@@ -228,11 +256,11 @@ function Badge({ children }) {
   );
 }
 
-function StatCard({ value, label }) {
+function StatCard({ title, description }) {
   return (
     <div className="rounded-[30px] border border-white/80 bg-white/85 p-6 shadow-[0_22px_60px_rgba(109,79,93,0.08)] backdrop-blur">
-      <div className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-[2rem]">{value}</div>
-      <p className="mt-2 text-sm leading-6 text-slate-600">{label}</p>
+      <div className="text-xl font-semibold tracking-tight text-slate-900 sm:text-[1.4rem]">{title}</div>
+      <p className="mt-2 text-sm leading-6 text-slate-600">{description}</p>
     </div>
   );
 }
@@ -259,6 +287,15 @@ function ComparisonCard({ eyebrow, title, items }) {
           <li key={item}>{item}</li>
         ))}
       </ul>
+    </article>
+  );
+}
+
+function LocalSeoCard({ title, description }) {
+  return (
+    <article className="rounded-[30px] border border-white/75 bg-white/84 p-6 shadow-[0_20px_60px_rgba(103,77,92,0.08)] backdrop-blur sm:p-7">
+      <h3 className="text-xl font-semibold leading-tight text-slate-900">{title}</h3>
+      <p className="mt-3 text-sm leading-7 text-slate-600">{description}</p>
     </article>
   );
 }
@@ -438,18 +475,18 @@ export default function App() {
 
               <div className="relative overflow-hidden rounded-[40px] border border-white/80 bg-white/84 p-6 shadow-[0_30px_100px_rgba(101,76,91,0.12)] backdrop-blur sm:p-8">
                 <div>
-                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-700">After-Hours Window</p>
+                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-700">After-hours opportunity</p>
                   <h2 className="mt-2 text-2xl font-semibold text-slate-900 sm:text-[1.8rem]">
-                    The visitor who asks at night is often the one closest to booking.
+                    The visitor who asks at night is the closest to booking.
                   </h2>
                   <p className="mt-3 max-w-md text-sm leading-6 text-slate-600">
-                    Most visitors asking about pricing, services, or availability after hours are deciding whether to stay engaged or move on.
+                    Most visitors asking about pricing, services, or availability after hours are deciding whether to stay or book somewhere else.
                   </p>
                 </div>
 
                 <div className="mt-7 grid gap-4 sm:grid-cols-3">
                   {proofPoints.map((point) => (
-                    <StatCard key={point.label} value={point.value} label={point.label} />
+                    <StatCard key={point.title} title={point.title} description={point.description} />
                   ))}
                 </div>
 
@@ -471,7 +508,7 @@ export default function App() {
             <SectionHeading
               eyebrow="The Problem"
               title="The Problem: High-Intent Leads Go Cold Fast"
-              description="After-hours inquiries are not casual browsing. They are often people ready to compare pricing, check availability, or book a consultation."
+              description="After-hours website inquiries are not casual browsing. They are often people ready to compare pricing, check availability, or book a consultation."
             />
             <p className="mt-6 max-w-3xl text-sm font-medium text-slate-600">
               Med spa inquiries do not follow business hours.
@@ -495,12 +532,12 @@ export default function App() {
                 <div className="mt-6 space-y-4">
                   <div className="rounded-[24px] border border-rose-100 bg-rose-50 p-5">
                     <p className="text-sm font-semibold text-rose-800">No response → they leave</p>
-                    <p className="mt-2 text-sm leading-6 text-rose-900">The visitor leaves your site without submitting anything.</p>
+                    <p className="mt-2 text-sm leading-6 text-rose-900">No contact. No booking.</p>
                   </div>
                   <div className="rounded-[24px] border border-slate-200 bg-white p-5">
-                    <p className="text-sm font-semibold text-slate-900">Delayed response → they lose interest</p>
+                    <p className="text-sm font-semibold text-slate-900">Delayed response → interest drops</p>
                     <p className="mt-2 text-sm leading-6 text-slate-600">
-                      The longer the wait, the easier it is for the lead to drift away.
+                      By morning, they’ve already booked somewhere else.
                     </p>
                   </div>
                 </div>
@@ -520,11 +557,11 @@ export default function App() {
             <SectionHeading
               eyebrow="How It Works"
               title="How Revenue After Dark Works"
-              description="A simple after-hours flow designed to keep high-intent conversations moving."
+              description="A simple system that captures and converts after-hours visitors."
             />
 
             <p className="mt-6 max-w-3xl text-sm font-medium text-slate-600">
-              Revenue After Dark keeps high-intent website visitors engaged before they leave or book somewhere else.
+              Revenue After Dark keeps high-intent website visitors engaged before they leave or book somewhere else, giving med spa lead capture a clearer path to booked consults.
             </p>
 
             <div className="mt-8 grid gap-6 lg:grid-cols-3">
@@ -537,7 +574,7 @@ export default function App() {
           <section className="py-16 sm:py-20">
             <SectionHeading
               eyebrow="Outcome Comparison"
-              title="What Changes When You Respond Instantly"
+              title="What Happens When You Respond Instantly"
               description="The difference is not more traffic. It is what happens to the interest already landing on your site."
             />
 
@@ -559,8 +596,11 @@ export default function App() {
             <SectionHeading
               eyebrow="Demo"
               title="See the Lead Flow in Action"
-              description="Watch how a high-intent website visitor becomes a captured lead your team can follow up with."
+              description="Watch how a high-intent website visitor becomes a captured lead your team can follow up with, from Botox inquiry follow-up to laser treatment inquiries and filler consultation leads."
             />
+            <p className="mt-6 max-w-3xl text-sm font-medium text-slate-600">
+              This is the moment most clinics lose the booking.
+            </p>
 
             <div className="mt-12">
               <ChatDemo />
@@ -571,10 +611,27 @@ export default function App() {
           </section>
 
           <section id="pricing" className="py-16 sm:py-20">
+            <div className="mb-16">
+              <SectionHeading
+                eyebrow="LOCAL MED SPA LEAD CAPTURE"
+                title="Built for Med Spas That Lose Leads After Hours"
+                description="Revenue After Dark helps med spas, aesthetic clinics, injectors, and laser treatment providers capture website inquiries when the office is closed. Whether someone asks about Botox, fillers, laser hair removal, pricing, or availability, the goal is to keep them engaged before they book somewhere else."
+              />
+              <p className="mt-6 max-w-3xl text-sm leading-7 text-slate-600">
+                For Michigan med spas and Detroit-area aesthetic clinics investing in med spa marketing, the focus is simple: stronger AI lead response for med spas, cleaner aesthetic clinic lead generation, and fewer lost website inquiries after hours.
+              </p>
+
+              <div className="mt-12 grid gap-6 md:grid-cols-3">
+                {localSeoCards.map((card) => (
+                  <LocalSeoCard key={card.title} title={card.title} description={card.description} />
+                ))}
+              </div>
+            </div>
+
             <SectionHeading
               eyebrow="PRICING"
               title="Simple Pricing for After-Hours Lead Response"
-              description="Start with website lead capture. Add instant text follow-up when you are ready."
+              description="Start capturing after-hours leads immediately. Upgrade when you’re ready to scale."
             />
 
             <div className="mt-12 grid gap-6 lg:grid-cols-2">
