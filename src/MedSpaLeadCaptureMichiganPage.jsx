@@ -3,15 +3,15 @@ import { PrimaryButton } from "./components/PrimaryButton";
 import { SectionHeading } from "./components/SectionHeading";
 
 const inquiryBullets = [
-  "Visitors ask about pricing or services",
-  "No response → they leave",
-  "Next-day follow-up comes too late",
+  "Visitor asks about Botox, filler, laser, or pricing",
+  "No one responds while intent is high",
+  "They book with another clinic before morning",
 ];
 
 const workflowBullets = [
-  "Respond instantly to website inquiries",
-  "Capture name, phone, and service interest",
-  "Move the conversation toward booking",
+  "Instant response while the visitor is still on your site",
+  "Name, phone, email, and service interest captured",
+  "Your team gets a warmer lead ready for follow-up",
 ];
 
 function Badge({ children }) {
@@ -108,44 +108,41 @@ export default function MedSpaLeadCaptureMichiganPage() {
         <main>
           <section className="grid gap-14 py-18 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:py-24">
             <div>
-              <Badge>Michigan Med Spa Lead Capture</Badge>
+              <Badge>MICHIGAN MED SPA LEAD CAPTURE</Badge>
               <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-[0.9] tracking-tight text-slate-900 sm:text-6xl lg:text-[4.8rem]">
-                Med Spa Lead Capture for Michigan Clinics
+                You’re Losing Ready-to-Book Clients After 5PM
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
-                Capture med spa leads in Michigan before they go cold.
-              </p>
-              <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-                Turn after-hours Botox, filler, and laser inquiries into booked consultations.
+                When someone asks about Botox, filler, laser, or pricing at night, they are already interested. If no one responds until the next day, they may book somewhere else before your team ever sees the lead.
               </p>
               <div className="mt-8">
-                <PrimaryButton href="/#contact">Book a Demo</PrimaryButton>
+                <PrimaryButton href="#section-3">See How It Works</PrimaryButton>
               </div>
             </div>
 
             <div className="rounded-[40px] border border-white/80 bg-white/84 p-6 shadow-[0_30px_100px_rgba(101,76,91,0.12)] backdrop-blur sm:p-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-700">Michigan Opportunity</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-700">MICHIGAN OPPORTUNITY</p>
               <h2 className="mt-3 text-2xl font-semibold text-slate-900 sm:text-[1.8rem]">
-                Local clinics lose ready-to-book inquiries every night.
+                The lead is hottest when your office is closed.
               </h2>
               <p className="mt-4 text-sm leading-7 text-slate-600">
-                Revenue After Dark is built to help Michigan med spas hold onto high-intent website visitors before those inquiries turn into lost bookings.
+                Revenue After Dark helps Michigan med spas capture high-intent website visitors before they disappear.
               </p>
             </div>
           </section>
 
           <section className="py-16 sm:py-20">
             <SectionHeading
-              eyebrow="Section 1"
-              title="Most med spa inquiries don’t come during business hours"
-              description="People ask about Botox, filler, pricing, and availability at night. If no one responds, they move on and book somewhere else."
+              eyebrow="SECTION 1"
+              title="Most Med Spa Leads Don’t Wait Until Morning"
+              description="Someone asking about pricing at 9PM is not just browsing. They are comparing options, checking availability, and deciding where to book."
             />
           </section>
 
           <section className="py-16 sm:py-20">
             <SectionHeading
-              eyebrow="Section 2"
-              title="What happens to after-hours inquiries"
+              eyebrow="SECTION 2"
+              title="Where After-Hours Leads Get Lost"
               description="This is where local med spa lead generation usually breaks down."
             />
 
@@ -156,11 +153,11 @@ export default function MedSpaLeadCaptureMichiganPage() {
             </ul>
           </section>
 
-          <section className="py-16 sm:py-20">
+          <section id="section-3" className="py-16 sm:py-20">
             <SectionHeading
-              eyebrow="Section 3"
+              eyebrow="SECTION 3"
               title="How Revenue After Dark works"
-              description="A simple way to keep high-intent Michigan website visitors moving toward a booked consultation."
+              description="A simple after-hours response system built to keep high-intent conversations moving toward a booked consultation."
             />
 
             <ul className="mt-12 grid gap-4 md:grid-cols-3">
@@ -172,10 +169,19 @@ export default function MedSpaLeadCaptureMichiganPage() {
 
           <section className="py-16 sm:py-20">
             <SectionHeading
-              eyebrow="Section 4"
+              eyebrow="SECTION 4"
               title="Built for Michigan med spas"
-              description="Designed for clinics in Detroit, Dearborn, West Bloomfield, Novi, and surrounding areas that want to convert more high-intent inquiries."
+              description="Designed for clinics in Detroit, Dearborn, West Bloomfield, Novi, Birmingham, Royal Oak, and surrounding areas that want more booked consults from the traffic they already have."
             />
+
+            <div className="mt-8">
+              <h2 className="max-w-3xl font-serif text-4xl leading-[1.02] tracking-tight text-slate-900 sm:text-5xl">
+                Stop Letting Ready Clients Wait Until Morning
+              </h2>
+              <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+                If your website gets after-hours inquiries, those leads should be captured before they go cold.
+              </p>
+            </div>
 
             <div className="mt-8">
               <PrimaryButton href="/#contact">Book a Demo</PrimaryButton>
