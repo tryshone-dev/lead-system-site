@@ -619,6 +619,16 @@ export default function App() {
               />
               <p className="mt-6 max-w-3xl text-sm leading-7 text-slate-600">
                 For Michigan med spas and Detroit-area aesthetic clinics investing in med spa marketing, the focus is simple: stronger AI lead response for med spas, cleaner aesthetic clinic lead generation, and fewer lost website inquiries after hours.
+                <span> </span>
+                <a href="/med-spa-lead-capture-michigan" className="font-medium text-rose-700 transition hover:text-rose-800">
+                  Explore the Michigan med spa lead capture page.
+                </a>
+              </p>
+              <p className="mt-4 text-sm text-slate-600">
+                Call or text:{" "}
+                <a href="tel:+19476220143" className="font-medium text-rose-700 transition hover:text-rose-800">
+                  (947) 622-0143
+                </a>
               </p>
 
               <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -674,6 +684,12 @@ export default function App() {
                 <p className="mt-6 max-w-xl text-base font-semibold leading-7 text-slate-900">
                   You don’t need more traffic first. You need to convert more of the people already reaching out.
                 </p>
+                <p className="mt-4 text-sm text-slate-600">
+                  Call or text:{" "}
+                  <a href="tel:+19476220143" className="font-medium text-rose-700 transition hover:text-rose-800">
+                    (947) 622-0143
+                  </a>
+                </p>
               </div>
 
               <ContactForm />
@@ -694,6 +710,15 @@ export default function App() {
             </div>
           </section>
         </main>
+
+        <footer className="pb-8 pt-4 text-sm text-slate-500">
+          <p>
+            Call or text:{" "}
+            <a href="tel:+19476220143" className="font-medium text-rose-700 transition hover:text-rose-800">
+              (947) 622-0143
+            </a>
+          </p>
+        </footer>
       </div>
 
       <MobileStickyCTA />
