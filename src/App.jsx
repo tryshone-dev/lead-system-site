@@ -8,19 +8,19 @@ import { SectionHeading } from "./components/SectionHeading";
 
 const painPoints = [
   {
-    title: "Late-night Botox questions",
+    title: "They ask after hours",
     description:
-      "These visitors are often ready to book and looking for a reason to stay on your site.",
+      "Website visitors land on your service or pricing pages when your team is offline.",
   },
   {
-    title: "Weekend pricing inquiries",
+    title: "They wait for a response",
     description:
-      "If they do not get a response within minutes, they start looking somewhere else.",
+      "They are deciding whether to stay engaged or keep looking for another med spa.",
   },
   {
-    title: "After-work consultation requests",
+    title: "They book somewhere else",
     description:
-      "By the next morning, the lead may already be gone.",
+      "If no one responds quickly, the consultation often goes to a competitor instead.",
   },
 ];
 
@@ -54,29 +54,43 @@ const proofPoints = [
 const workflow = [
   {
     step: "1",
-    title: "A potential patient visits your site after hours",
+    title: "A visitor asks about services, pricing, or availability",
     description:
-      "They are interested enough to ask a question instead of leaving right away.",
+      "They have enough intent to raise their hand instead of leaving your site.",
   },
   {
     step: "2",
-    title: "They ask about services, pricing, or availability",
+    title: "The system responds instantly on the website",
     description:
-      "The visitor is deciding whether to stay engaged or move on to another med spa.",
+      "The conversation starts while the visitor is still paying attention.",
   },
   {
     step: "3",
-    title: "Revenue After Dark responds before they leave",
+    title: "It captures their name, phone, email, and service interest",
     description:
-      "The reply helps hold attention before the lead goes cold or books somewhere else.",
+      "Instead of losing the visitor, your team gets the details needed to follow up.",
   },
   {
     step: "4",
-    title: "Your team receives a captured lead ready for follow-up",
+    title: "Your team receives a warmer lead ready for follow-up",
     description:
-      "The lead is already captured so your team can follow up while interest is still high.",
+      "The handoff happens with context while intent is still fresh.",
   },
 ];
+
+const outcomeComparison = {
+  without: [
+    "Inquiry comes in after hours",
+    "No one responds right away",
+    "Lead loses interest or books elsewhere",
+  ],
+  with: [
+    "Inquiry comes in",
+    "Website responds instantly",
+    "Lead details are captured",
+    "Your team follows up with context",
+  ],
+};
 
 const touchpoints = [
   {
@@ -186,7 +200,7 @@ const faqs = [
   {
     question: "Does this handle missed phone calls?",
     answer:
-      "No. This is focused on website lead capture. It helps engage visitors who land on your site, collect their info, and keep the conversation moving. Missed-call text-back can be added later as a separate layer.",
+      "No. This is focused on website lead capture. It engages visitors who land on your site, collects their information, and helps your team follow up faster. Missed-call text-back can be added later as a separate layer.",
   },
   {
     question: "Can it connect to our CRM or booking process?",
@@ -232,6 +246,20 @@ function WorkflowCard({ step, title, description }) {
       <h3 className="mt-5 text-xl font-semibold text-slate-900">{title}</h3>
       <p className="mt-3 text-sm leading-7 text-slate-600">{description}</p>
     </div>
+  );
+}
+
+function ComparisonCard({ eyebrow, title, items }) {
+  return (
+    <article className="rounded-[32px] border border-white/80 bg-white/88 p-7 shadow-[0_22px_70px_rgba(102,76,91,0.08)] backdrop-blur">
+      <p className="text-sm font-semibold uppercase tracking-[0.24em] text-rose-700">{eyebrow}</p>
+      <h3 className="mt-4 text-2xl font-semibold tracking-tight text-slate-900">{title}</h3>
+      <ul className="mt-6 space-y-3 text-sm leading-7 text-slate-600">
+        {items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </article>
   );
 }
 
@@ -341,31 +369,6 @@ function MobileStickyCTA() {
 }
 
 export default function App() {
-  const [activeService, setActiveService] = useState("botox");
-
-  const serviceHighlights = useMemo(
-    () => ({
-      botox: {
-        label: "Botox",
-        title: "Turn injectable curiosity into consultation intent",
-        body: "Answer timing, maintenance, and next-step questions quickly so the prospect stays engaged and moves toward booking.",
-      },
-      laser: {
-        label: "Laser Hair Removal",
-        title: "Keep treatment-comparison shoppers in your pipeline",
-        body: "Clarify what to expect, capture treatment interest, and hand your staff a warmer lead before the prospect clicks away.",
-      },
-      booking: {
-        label: "Booking",
-        title: "Support the moment when a lead is ready to schedule",
-        body: "Help ready-to-book prospects share preferences and contact details before they give up or go elsewhere.",
-      },
-    }),
-    []
-  );
-
-  const activeHighlight = serviceHighlights[activeService];
-
   return (
     <div className="relative overflow-hidden bg-[var(--page-bg)] text-slate-900">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[48rem] bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.96),_transparent_38%),radial-gradient(circle_at_top_right,_rgba(251,207,232,0.42),_transparent_34%),linear-gradient(180deg,_rgba(255,248,251,0.98),_rgba(247,242,246,0.76),_rgba(245,246,250,0))]" />
@@ -427,27 +430,6 @@ export default function App() {
               </div>
               <p className="mt-4 text-sm font-medium text-slate-600">After-hours silence is costing you bookings every week.</p>
               <p className="mt-2 text-sm text-slate-500">No setup. No commitment. Just a quick walkthrough to see it on your site.</p>
-
-              <ul className="mt-8 grid gap-3 text-sm text-slate-700 sm:grid-cols-3 sm:gap-4">
-                {heroBullets.map((item) => (
-                  <li
-                    key={item}
-                    className="rounded-[24px] border border-white/80 bg-white/78 px-4 py-4 shadow-[0_16px_40px_rgba(105,78,91,0.05)]"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-10 grid gap-4 sm:grid-cols-3">
-                {proofPoints.map((point) => (
-                  <StatCard key={point.label} value={point.value} label={point.label} />
-                ))}
-              </div>
-
-              <p className="mt-6 text-sm font-medium text-slate-600">
-                For med spas, fast follow-up often matters more than more traffic.
-              </p>
             </div>
 
             <div className="relative">
@@ -455,99 +437,44 @@ export default function App() {
               <div className="absolute -right-4 bottom-10 hidden h-32 w-32 rounded-full bg-cyan-100/75 blur-2xl md:block" />
 
               <div className="relative overflow-hidden rounded-[40px] border border-white/80 bg-white/84 p-6 shadow-[0_30px_100px_rgba(101,76,91,0.12)] backdrop-blur sm:p-8">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-700">Live Lead Snapshot</p>
-                    <h2 className="mt-2 text-2xl font-semibold text-slate-900 sm:text-[1.8rem]">
-                      What lead recovery looks like when a visitor is about to leave
-                    </h2>
-                    <p className="mt-3 max-w-md text-sm leading-6 text-slate-600">
-                      The goal is to keep the visitor engaged before they go cold or book somewhere else.
-                    </p>
-                  </div>
-                  <div className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
-                    Online 24/7
-                  </div>
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-700">After-Hours Window</p>
+                  <h2 className="mt-2 text-2xl font-semibold text-slate-900 sm:text-[1.8rem]">
+                    The visitor who asks at night is often the one closest to booking.
+                  </h2>
+                  <p className="mt-3 max-w-md text-sm leading-6 text-slate-600">
+                    Most visitors asking about pricing, services, or availability after hours are deciding whether to stay engaged or move on.
+                  </p>
                 </div>
 
-                <div className="mt-7 rounded-[30px] bg-slate-950 p-5 text-slate-50 sm:p-6">
-                  <div className="flex items-center justify-between text-xs uppercase tracking-[0.24em] text-slate-400">
-                    <span>Incoming Website Chat</span>
-                    <span>10:47 PM</span>
-                  </div>
-
-                  <div className="mt-5 space-y-4">
-                    <div className="max-w-[85%] rounded-[22px] rounded-bl-md bg-white/12 px-4 py-3 text-sm leading-6 text-slate-100">
-                      Hi, I’m interested in Botox and wanted to know how soon I could get in for a consultation.
-                    </div>
-                    <div className="ml-auto max-w-[88%] rounded-[22px] rounded-br-md bg-rose-200 px-4 py-3 text-sm leading-6 text-slate-900">
-                      Absolutely. We can help with that now. I can gather a few details and help your consultation request move forward right away.
-                    </div>
-                    <div className="grid gap-3 rounded-[24px] border border-white/10 bg-white/6 p-4 text-sm text-slate-200 sm:grid-cols-2">
-                      <div>
-                        <p className="text-xs uppercase tracking-[0.22em] text-slate-400">Lead Intent</p>
-                        <p className="mt-2 font-medium text-white">High-intent injectable inquiry</p>
-                      </div>
-                      <div>
-                        <p className="text-xs uppercase tracking-[0.22em] text-slate-400">Next Action</p>
-                        <p className="mt-2 font-medium text-white">Capture details and guide to consult</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-6 grid gap-4 sm:grid-cols-3">
-                  {Object.entries(serviceHighlights).map(([key, item]) => (
-                    <button
-                      key={key}
-                      type="button"
-                      onClick={() => setActiveService(key)}
-                      className={`rounded-[24px] border px-4 py-4 text-left transition ${
-                        activeService === key
-                          ? "border-rose-200 bg-rose-50 shadow-sm"
-                          : "border-slate-200 bg-white/78 hover:border-rose-100 hover:bg-white"
-                      }`}
-                    >
-                      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-500">{item.label}</p>
-                      <p className="mt-2 text-sm font-medium leading-6 text-slate-900">{item.title}</p>
-                    </button>
+                <div className="mt-7 grid gap-4 sm:grid-cols-3">
+                  {proofPoints.map((point) => (
+                    <StatCard key={point.label} value={point.value} label={point.label} />
                   ))}
                 </div>
 
-                <div className="mt-5 rounded-[28px] border border-slate-200 bg-[linear-gradient(180deg,rgba(255,255,255,0.94),rgba(250,245,248,0.88))] p-5">
-                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-700">{activeHighlight.label}</p>
-                  <p className="mt-2 text-lg font-semibold text-slate-900">{activeHighlight.title}</p>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">{activeHighlight.body}</p>
-                </div>
+                <ul className="mt-6 grid gap-3 text-sm text-slate-700 sm:grid-cols-3 sm:gap-4">
+                  {heroBullets.map((item) => (
+                    <li
+                      key={item}
+                      className="rounded-[24px] border border-white/80 bg-white/78 px-4 py-4 shadow-[0_16px_40px_rgba(105,78,91,0.05)]"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
-          </section>
-
-          <section className="py-10 sm:py-14">
-            <div className="rounded-[38px] border border-white/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.9),rgba(249,241,245,0.88),rgba(243,247,249,0.88))] p-8 shadow-[0_24px_70px_rgba(102,76,91,0.08)] sm:p-10">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-rose-700">The Reality</p>
-              <h2 className="mt-5 max-w-3xl font-serif text-4xl leading-[1.02] tracking-tight text-slate-900 sm:text-5xl">
-                Most med spas lose 30–50% of after-hours leads.
-              </h2>
-              <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
-                Not because they’re not interested. Because no one responds fast enough.
-              </p>
-              <ul className="mt-6 grid gap-3 text-sm font-medium text-slate-700 sm:grid-cols-3 sm:gap-4">
-                <li className="rounded-[22px] border border-white/80 bg-white/80 px-4 py-4">Leads go cold in minutes</li>
-                <li className="rounded-[22px] border border-white/80 bg-white/80 px-4 py-4">Competitors respond faster</li>
-                <li className="rounded-[22px] border border-white/80 bg-white/80 px-4 py-4">The booking goes to whoever replies first</li>
-              </ul>
             </div>
           </section>
 
           <section id="problem" className="py-16 sm:py-20">
             <SectionHeading
               eyebrow="The Problem"
-              title="The Problem: Your Best Website Leads Happen After Hours"
-              description="Med spa inquiries do not follow business hours."
+              title="The Problem: High-Intent Leads Go Cold Fast"
+              description="After-hours inquiries are not casual browsing. They are often people ready to compare pricing, check availability, or book a consultation."
             />
             <p className="mt-6 max-w-3xl text-sm font-medium text-slate-600">
-              These are not casual browsers. These are ready buyers. If they do not get a response within minutes, they move to another med spa.
+              Med spa inquiries do not follow business hours.
             </p>
 
             <div className="mt-12 grid gap-6 lg:grid-cols-[1fr_0.95fr]">
@@ -589,44 +516,16 @@ export default function App() {
             </div>
           </section>
 
-          <section className="py-16 sm:py-20">
-            <SectionHeading
-              eyebrow="Where Leads Slip Away"
-              title="The missed-conversion problem usually starts in the channels med spas rely on most."
-              description="Revenue After Dark is designed for the moments where website response delays quietly cost consultations."
-            />
-
-            <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-              {touchpoints.map((item) => (
-                <TouchpointCard key={item.title} {...item} />
-              ))}
-            </div>
-          </section>
-
           <section id="solution" className="py-16 sm:py-20">
             <SectionHeading
-              eyebrow="The Solution"
-              title="After-Hours Coverage That Stops Lead Loss"
-              description="Revenue After Dark keeps high-intent website visitors engaged before they leave or book somewhere else."
+              eyebrow="How It Works"
+              title="How Revenue After Dark Works"
+              description="A simple after-hours flow designed to keep high-intent conversations moving."
             />
 
             <p className="mt-6 max-w-3xl text-sm font-medium text-slate-600">
-              It responds on the website, captures contact details, and moves the conversation toward a consultation request while intent is still high.
+              Revenue After Dark keeps high-intent website visitors engaged before they leave or book somewhere else.
             </p>
-
-            <div className="mt-12">
-              <SectionHeading
-                eyebrow="How It Works"
-                title="How It Works"
-                description="A simple flow built to respond fast and move after-hours interest toward booking."
-              />
-            </div>
-
-            <div className="mt-12 grid gap-6 lg:grid-cols-3">
-              {solutionCards.map((card) => (
-                <FeatureCard key={card.title} {...card} />
-              ))}
-            </div>
 
             <div className="mt-8 grid gap-6 lg:grid-cols-3">
               {workflow.map((item) => (
@@ -636,69 +535,32 @@ export default function App() {
           </section>
 
           <section className="py-16 sm:py-20">
-            <div className="grid gap-6 rounded-[40px] border border-white/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.9),rgba(239,247,249,0.88),rgba(251,241,245,0.92))] p-8 shadow-[0_28px_90px_rgba(91,71,86,0.1)] lg:grid-cols-[0.9fr_1.1fr] lg:p-10">
-              <div>
-                <Badge>Benefits</Badge>
-                <h2 className="mt-5 font-serif text-4xl leading-tight text-slate-900 sm:text-5xl">
-                  What This Means for Your Med Spa
-                </h2>
-                <p className="mt-4 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-                  After-hours speed changes what happens to your warmest leads.
-                </p>
-              </div>
-
-              <div className="grid gap-5 sm:grid-cols-2">
-                <div className="rounded-[28px] border border-white/80 bg-white/84 p-6">
-                  <p className="text-lg font-semibold text-slate-900">Capture leads you would normally lose</p>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">
-                    Stop letting interested website visitors disappear before your team even sees them.
-                  </p>
-                </div>
-                <div className="rounded-[28px] border border-white/80 bg-white/84 p-6">
-                  <p className="text-lg font-semibold text-slate-900">Increase booked consultations without more traffic</p>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">
-                    Get more from the visitors already landing on your site instead of paying for more clicks.
-                  </p>
-                </div>
-                <div className="rounded-[28px] border border-white/80 bg-white/84 p-6">
-                  <p className="text-lg font-semibold text-slate-900">Turn late-night interest into real revenue</p>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">
-                    When interest shows up after hours, you still have a chance to capture it before it fades.
-                  </p>
-                </div>
-                <div className="rounded-[28px] border border-white/80 bg-white/84 p-6">
-                  <p className="text-lg font-semibold text-slate-900">Stay competitive in a crowded local market</p>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">
-                    If you are not responding, another med spa will.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section className="py-16 sm:py-20">
             <SectionHeading
-              eyebrow="Social Proof"
-              title="Built for real front desk pressure."
-              description="Designed for med spas handling Botox, fillers, laser, skincare, pricing, and high-intent booking questions."
+              eyebrow="Outcome Comparison"
+              title="What Changes When You Respond Instantly"
+              description="The difference is not more traffic. It is what happens to the interest already landing on your site."
             />
 
-            <div className="mt-12 grid gap-6 lg:grid-cols-3">
-              {testimonials.map((item) => (
-                <TestimonialCard key={`${item.name}-${item.role}`} {...item} />
-              ))}
+            <div className="mt-12 grid gap-6 lg:grid-cols-2">
+              <ComparisonCard
+                eyebrow="Without Revenue After Dark"
+                title="Without Revenue After Dark"
+                items={outcomeComparison.without}
+              />
+              <ComparisonCard
+                eyebrow="With Revenue After Dark"
+                title="With Revenue After Dark"
+                items={outcomeComparison.with}
+              />
             </div>
           </section>
 
           <section id="demo" className="py-16 sm:py-20">
             <SectionHeading
-              eyebrow="Chatbot Demo"
-              title="See what happens when a lead gets an instant answer."
-              description="See how fast response turns a high-intent website visitor into a captured lead your team can follow up with."
+              eyebrow="Demo"
+              title="See the Lead Flow in Action"
+              description="Watch how a high-intent website visitor becomes a captured lead your team can follow up with."
             />
-            <p className="mt-6 max-w-3xl text-sm font-medium text-slate-600">
-              This is the exact moment you lose the booking.
-            </p>
 
             <div className="mt-12">
               <ChatDemo />
@@ -706,6 +568,20 @@ export default function App() {
             <p className="mt-6 max-w-3xl text-sm leading-7 text-slate-600">
               This does not replace your phone system. It captures website visitors who may leave without calling, then helps your team follow up faster.
             </p>
+          </section>
+
+          <section id="pricing" className="py-16 sm:py-20">
+            <SectionHeading
+              eyebrow="PRICING"
+              title="Simple Pricing for After-Hours Lead Response"
+              description="Start with website lead capture. Add instant text follow-up when you are ready."
+            />
+
+            <div className="mt-12 grid gap-6 lg:grid-cols-2">
+              {pricingPlans.map((plan) => (
+                <PricingCard key={plan.eyebrow} {...plan} />
+              ))}
+            </div>
           </section>
 
           <section id="faq" className="py-16 sm:py-20">
@@ -718,20 +594,6 @@ export default function App() {
             <div className="mt-12 grid gap-4">
               {faqs.map((item, index) => (
                 <FAQItem key={item.question} question={item.question} answer={item.answer} defaultOpen={index === 0} />
-              ))}
-            </div>
-          </section>
-
-          <section id="pricing" className="py-16 sm:py-20">
-            <SectionHeading
-              eyebrow="PRICING"
-              title="Simple pricing for after-hours lead response"
-              description="Start with website lead capture. Add instant text follow-up when you are ready."
-            />
-
-            <div className="mt-12 grid gap-6 lg:grid-cols-2">
-              {pricingPlans.map((plan) => (
-                <PricingCard key={plan.eyebrow} {...plan} />
               ))}
             </div>
           </section>
