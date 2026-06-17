@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { AiReceptionistWaitlist } from "./components/AiReceptionistWaitlist";
 import { ChatDemo } from "./components/ChatDemo";
 import { ContactForm } from "./components/ContactForm";
 import { FAQItem } from "./components/FAQItem";
@@ -246,6 +247,17 @@ const heroBullets = [
   "Respond before they leave",
   "Capture intent immediately",
   "Convert interest into bookings",
+];
+
+const aiReceptionistFeatures = [
+  "Answers incoming calls 24/7",
+  "Handles common treatment and appointment questions",
+  "Qualifies new leads",
+  "Books consultations automatically",
+  "Sends confirmation and follow-up texts",
+  "Notifies your team instantly",
+  "Stores call transcripts and lead history",
+  "Integrates with the Revenue After Dark dashboard",
 ];
 
 function Badge({ children }) {
@@ -706,6 +718,44 @@ export default function App() {
               </p>
               <div className="mt-8">
                 <PrimaryButton href="#contact">Book a Demo</PrimaryButton>
+              </div>
+            </div>
+          </section>
+
+          <section className="py-12 sm:py-16">
+            <div className="rounded-[38px] border border-white/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.92),rgba(247,241,245,0.92),rgba(244,247,249,0.9))] p-8 shadow-[0_24px_70px_rgba(102,76,91,0.08)] sm:p-10">
+              <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+                <div>
+                  <div className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-rose-700">
+                    Coming Soon
+                  </div>
+                  <h2 className="mt-5 max-w-3xl font-serif text-4xl leading-[1.02] tracking-tight text-slate-900 sm:text-5xl">
+                    24/7 AI Receptionist for Med Spas
+                  </h2>
+                  <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
+                    Never miss a lead after hours. Answer calls, qualify prospects, book appointments, and follow up automatically.
+                  </p>
+
+                  <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+                    {aiReceptionistFeatures.map((item) => (
+                      <li
+                        key={item}
+                        className="rounded-[24px] border border-white/80 bg-white/84 px-5 py-4 text-sm leading-7 text-slate-700 shadow-[0_18px_50px_rgba(103,77,92,0.08)] backdrop-blur"
+                      >
+                        <span className="font-semibold text-rose-700">✓</span>
+                        <span className="ml-3">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <p className="mt-8 max-w-3xl text-sm leading-7 text-slate-600">
+                    Future Revenue After Dark Module:
+                    <span> </span>
+                    AI Receptionist is currently in development and will integrate directly with lead capture, appointment booking, follow-up automation, and reporting inside the Operator Dashboard.
+                  </p>
+                </div>
+
+                <AiReceptionistWaitlist />
               </div>
             </div>
           </section>
