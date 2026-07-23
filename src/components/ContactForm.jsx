@@ -58,6 +58,7 @@ export function ContactForm() {
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState("");
   const [submitError, setSubmitError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const hasVisibleErrors = Object.values(errors).some(Boolean);
 
   function handleChange(event) {
@@ -85,6 +86,10 @@ export function ContactForm() {
   async function handleSubmit(event) {
     event.preventDefault();
 
+    if (isSubmitting) {
+      return;
+    }
+
     const nextErrors = getErrors(form);
     setErrors(nextErrors);
     setTouched({
@@ -104,6 +109,7 @@ export function ContactForm() {
 
     setSuccessMessage("");
     setSubmitError("");
+    setIsSubmitting(true);
 
     try {
       const response = await fetch(FORMSPREE_ENDPOINT, {
@@ -126,12 +132,20 @@ export function ContactForm() {
         throw new Error("Form submission failed");
       }
 
+      if (typeof window !== "undefined" && typeof window.oaiq === "function") {
+        window.oaiq("measure", "lead_created", {
+          type: "customer_action",
+        });
+      }
+
       setSuccessMessage("Thanks — your demo request has been sent.");
       setForm(initialForm);
       setTouched({});
       setErrors({});
     } catch {
       setSubmitError("Something went wrong sending your request. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
@@ -263,6 +277,7 @@ export function ContactForm() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <button
             type="submit"
+            disabled={isSubmitting}
             className="inline-flex w-full items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_40px_rgba(32,24,31,0.16)] transition hover:-translate-y-0.5 hover:bg-slate-800 sm:w-auto"
           >
             Show me the missed lead flow
