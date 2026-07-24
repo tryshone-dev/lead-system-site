@@ -2,15 +2,14 @@ export function SiteLogo({ href = "/", className = "" }) {
   return (
     <a href={href} className={`flex items-center text-slate-900 ${className}`}>
       <svg
-        viewBox="0 0 1200 290"
+        viewBox="0 14 1200 252"
         role="img"
         aria-labelledby="site-logo-title site-logo-desc"
         className="h-auto w-[228px] max-w-[74vw] sm:w-[310px] lg:w-[442px]"
       >
         <title id="site-logo-title">Revenue After Dark</title>
         <desc id="site-logo-desc">
-          Revenue After Dark logo with a circular growth icon and the tagline Instant Website Lead
-          Response for Med Spas.
+          Revenue After Dark logo with a circular growth icon and two-line wordmark.
         </desc>
 
         <circle cx="124" cy="136" r="108" fill="#be6d7b" stroke="#ffffff" strokeWidth="14" />
@@ -55,18 +54,6 @@ export function SiteLogo({ href = "/", className = "" }) {
           letterSpacing="28"
         >
           AFTER DARK
-        </text>
-
-        <text
-          x="274"
-          y="258"
-          fill="#2f353d"
-          fontFamily="'Plus Jakarta Sans', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif"
-          fontSize="31"
-          fontWeight="600"
-          letterSpacing="4.2"
-        >
-          INSTANT WEBSITE LEAD RESPONSE FOR MED SPAS
         </text>
       </svg>
     </a>
