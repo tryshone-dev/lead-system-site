@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Revenue After Dark mark</title>
+  <desc id="desc">Circular Revenue After Dark icon with growth arrow and chat bubble.</desc>
+  <circle cx="128" cy="128" r="114" fill="#be6d7b" stroke="#ffffff" stroke-width="14" />
+  <path
+    d="M48 170L104 114L136 146L198 88"
+    fill="none"
+    stroke="#ffffff"
+    stroke-width="14"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path d="M185 74L220 84L199 114Z" fill="#ffffff" />
+  <path
+    d="M104 176C81 176 63 191 63 212C63 233 81 248 104 248H146L159 257L154 246C171 240 182 227 182 212C182 191 164 176 141 176H104Z"
+    fill="#ffffff"
+  />
+  <circle cx="104" cy="212" r="8" fill="#be6d7b" />
+  <circle cx="128" cy="212" r="8" fill="#be6d7b" />
+  <circle cx="152" cy="212" r="8" fill="#be6d7b" />
+</svg>

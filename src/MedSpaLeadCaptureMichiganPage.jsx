@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { PrimaryButton } from "./components/PrimaryButton";
 import { SectionHeading } from "./components/SectionHeading";
+import { SiteLogo } from "./components/SiteLogo";
 
 const inquiryBullets = [
   "Visitor asks about Botox, filler, laser, or pricing",
@@ -77,17 +78,7 @@ export default function MedSpaLeadCaptureMichiganPage() {
 
       <div className="relative mx-auto max-w-7xl px-5 pb-28 pt-6 sm:px-6 lg:px-8 lg:pb-20">
         <header className="flex items-center justify-between gap-4 py-5">
-          <a href="/" className="flex items-center gap-3 text-slate-900">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/75 bg-white/85 shadow-sm">
-              <span className="font-serif text-2xl leading-none text-rose-700">R</span>
-            </div>
-            <div>
-              <p className="text-base font-semibold tracking-[0.02em]">Revenue After Dark</p>
-              <p className="text-xs uppercase tracking-[0.24em] text-slate-500">
-                Instant website lead response for med spas.
-              </p>
-            </div>
-          </a>
+          <SiteLogo href="/" />
 
           <nav className="hidden items-center gap-6 text-sm text-slate-600 md:flex">
             <a href="/" className="transition hover:text-slate-900">
