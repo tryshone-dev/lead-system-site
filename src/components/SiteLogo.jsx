@@ -5,7 +5,7 @@ export function SiteLogo({ href = "/", className = "" }) {
         viewBox="0 0 1200 290"
         role="img"
         aria-labelledby="site-logo-title site-logo-desc"
-        className="h-auto w-[210px] max-w-[68vw] sm:w-[260px] lg:w-[320px]"
+        className="h-auto w-[228px] max-w-[74vw] sm:w-[310px] lg:w-[442px]"
       >
         <title id="site-logo-title">Revenue After Dark</title>
         <desc id="site-logo-desc">
