@@ -557,12 +557,8 @@ export default function App() {
             <SectionHeading
               eyebrow="Interactive Demo"
               title="See the Lead Flow in Action"
-              description="Experience how a real after-hours website visitor becomes a captured consultation request your team can follow up with."
+              description="See how Revenue After Dark answers the question, keeps the visitor engaged, and captures the information your team needs to follow up."
             />
-            <p className="mt-6 max-w-3xl text-sm font-medium text-slate-600">
-              This is the strongest part of the system. Visitors see answers fast, stay engaged,
-              and give your team something real to work with by morning.
-            </p>
 
             <div className="mt-12">
               <ChatDemo />
@@ -572,6 +568,82 @@ export default function App() {
               without calling, then helps your team follow up faster. Turn nights into booked
               appointments and start every morning with new opportunities.
             </p>
+          </section>
+
+          <section id="dashboard" className="py-16 sm:py-20">
+            <SectionHeading
+              eyebrow="Owner View"
+              title="What Your Team Receives"
+              description="While the visitor gets an immediate response, your team receives a complete lead with the information needed to follow up."
+            />
+            <p className="mt-6 max-w-3xl text-sm font-medium text-slate-600">
+              Illustrative Dashboard Preview
+            </p>
+
+            <div className="mt-12 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+              <div className="overflow-hidden rounded-[36px] border border-white/80 bg-slate-950 p-6 shadow-[0_28px_90px_rgba(91,66,83,0.12)] sm:p-7">
+                <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-200">
+                      New Lead Received
+                    </p>
+                    <p className="mt-1 text-sm text-slate-400">
+                      Captured after hours. Ready for follow-up.
+                    </p>
+                  </div>
+                  <div className="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-300">
+                    10:43 PM
+                  </div>
+                </div>
+
+                <dl className="mt-5">
+                  {dashboardFields.map(([label, value]) => (
+                    <LeadField key={label} label={label} value={value} />
+                  ))}
+                </dl>
+              </div>
+
+              <div className="grid gap-6">
+                <div className="rounded-[34px] border border-white/80 bg-white/88 p-6 shadow-[0_22px_70px_rgba(102,76,91,0.08)] backdrop-blur sm:p-7">
+                  <div className="flex items-center justify-between gap-4">
+                    <div>
+                      <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-700">
+                        Sample Owner Dashboard
+                      </p>
+                      <p className="mt-3 text-sm leading-7 text-slate-600">
+                        Example metrics to show how your staff can view lead volume, response speed,
+                        and requested appointments in one place.
+                      </p>
+                    </div>
+                    <div className="rounded-full border border-rose-200 bg-rose-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-rose-700">
+                      Illustrative
+                    </div>
+                  </div>
+
+                  <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                    {dashboardStats.map(([label, value]) => (
+                      <DashboardMetricCard key={label} label={label} value={value} />
+                    ))}
+                  </div>
+                </div>
+
+                <div className="rounded-[34px] border border-white/80 bg-white/88 p-6 shadow-[0_22px_70px_rgba(102,76,91,0.08)] backdrop-blur sm:p-7">
+                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-700">
+                    Lead Queue
+                  </p>
+                  <p className="mt-3 text-sm leading-7 text-slate-600">
+                    Your team starts the day with contact details, treatment interest, and context
+                    already captured.
+                  </p>
+
+                  <div className="mt-6 space-y-3">
+                    {leadQueue.map((item) => (
+                      <QueueRow key={item.name} {...item} />
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
 
           <section id="how-it-works" className="py-16 sm:py-20">
@@ -628,62 +700,6 @@ export default function App() {
               Revenue After Dark isn&apos;t another chatbot. It&apos;s an after-hours revenue system
               built specifically for med spas.
             </p>
-          </section>
-
-          <section id="dashboard" className="py-16 sm:py-20">
-            <SectionHeading
-              eyebrow="Owner View"
-              title="What Your Team Receives"
-              description="Wake up to qualified consultations, cleaner follow-up, and a clear view of what happened while your office was closed."
-            />
-
-            <div className="mt-12 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-              <div className="overflow-hidden rounded-[36px] border border-white/80 bg-slate-950 p-6 shadow-[0_28px_90px_rgba(91,66,83,0.12)] sm:p-7">
-                <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                  <div>
-                    <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-200">
-                      New Lead Received
-                    </p>
-                    <p className="mt-1 text-sm text-slate-400">
-                      Captured after hours. Ready for follow-up.
-                    </p>
-                  </div>
-                  <div className="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-300">
-                    10:43 PM
-                  </div>
-                </div>
-
-                <dl className="mt-5">
-                  {dashboardFields.map(([label, value]) => (
-                    <LeadField key={label} label={label} value={value} />
-                  ))}
-                </dl>
-              </div>
-
-              <div className="grid gap-6">
-                <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-                  {dashboardStats.map(([label, value]) => (
-                    <DashboardMetricCard key={label} label={label} value={value} />
-                  ))}
-                </div>
-
-                <div className="rounded-[34px] border border-white/80 bg-white/88 p-6 shadow-[0_22px_70px_rgba(102,76,91,0.08)] backdrop-blur sm:p-7">
-                  <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-700">
-                    Lead Queue
-                  </p>
-                  <p className="mt-3 text-sm leading-7 text-slate-600">
-                    Your team starts the day with contact details, treatment interest, and context
-                    already captured.
-                  </p>
-
-                  <div className="mt-6 space-y-3">
-                    {leadQueue.map((item) => (
-                      <QueueRow key={item.name} {...item} />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
           </section>
 
           <section className="py-16 sm:py-20">
