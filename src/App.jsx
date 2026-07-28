@@ -363,6 +363,23 @@ function ServiceChip({ children }) {
   );
 }
 
+function CTABlock({ title, description, buttonLabel, supportLine }) {
+  return (
+    <section className="py-12 sm:py-16">
+      <div className="rounded-[38px] border border-white/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.9),rgba(250,244,247,0.9),rgba(243,247,249,0.88))] p-8 shadow-[0_24px_70px_rgba(102,76,91,0.08)] sm:p-10">
+        <h2 className="max-w-3xl font-serif text-4xl leading-[1.02] tracking-tight text-slate-900 sm:text-5xl">
+          {title}
+        </h2>
+        <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">{description}</p>
+        <div className="mt-8">
+          <PrimaryButton href="#contact">{buttonLabel}</PrimaryButton>
+        </div>
+        {supportLine ? <p className="mt-4 text-sm text-slate-500">{supportLine}</p> : null}
+      </div>
+    </section>
+  );
+}
+
 function PricingCard({
   eyebrow,
   title,
@@ -727,6 +744,12 @@ export default function App() {
             </p>
           </section>
 
+          <CTABlock
+            title="See Revenue After Dark on Your Website"
+            description="Book a personalized demo and see how Revenue After Dark can respond to after-hours visitors, capture lead information, and prepare your team to follow up."
+            buttonLabel="Book My Demo"
+          />
+
           <section className="py-16 sm:py-20">
             <SectionHeading
               eyebrow="Implementation"
@@ -758,6 +781,13 @@ export default function App() {
               ))}
             </div>
           </section>
+
+          <CTABlock
+            title="Turn After-Hours Interest Into Booked Consultations"
+            description="Choose the right setup for your med spa, then see how Revenue After Dark would work with your services, pricing, and lead workflow."
+            buttonLabel="Book My Demo"
+            supportLine="Personalized walkthrough. No generic sales presentation."
+          />
 
           <section id="faq" className="py-16 sm:py-20">
             <SectionHeading
