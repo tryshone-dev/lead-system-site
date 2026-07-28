@@ -138,15 +138,6 @@ function ChatBubble({ role, text }) {
   );
 }
 
-function SnapshotRow({ label, value }) {
-  return (
-    <div className="flex items-center justify-between gap-4">
-      <dt className="text-slate-500">{label}</dt>
-      <dd className="max-w-[13rem] text-right font-medium text-slate-900">{value}</dd>
-    </div>
-  );
-}
-
 export function ChatDemo() {
   const [activeFlowId, setActiveFlowId] = useState(demoFlows[0].id);
 
@@ -176,20 +167,6 @@ export function ChatDemo() {
               <p className="mt-2 text-sm leading-6 text-slate-600">{flow.helperText}</p>
             </button>
           ))}
-        </div>
-
-        <div className="mt-6 rounded-[26px] border border-slate-200 bg-slate-50/90 p-5">
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">Captured Lead Snapshot</p>
-          <p className="mt-2 text-sm leading-6 text-slate-600">
-            This is what a fast, polished first response looks like when a lead is ready to book.
-          </p>
-          <dl className="mt-4 space-y-3 text-sm">
-            <SnapshotRow label="Service" value={activeFlow.lead.service} />
-            <SnapshotRow label="Intent" value={activeFlow.lead.intent} />
-            <SnapshotRow label="Name" value={activeFlow.lead.name} />
-            <SnapshotRow label="Email" value={activeFlow.lead.email} />
-            <SnapshotRow label="Phone" value={activeFlow.lead.phone} />
-          </dl>
         </div>
       </div>
 
