@@ -1,3 +1,19 @@
+const revenueAfterDarkContactPoint = {
+  "@type": "ContactPoint",
+  telephone: "+1-248-942-4785",
+  contactType: "sales",
+  areaServed: "US",
+  availableLanguage: ["English"],
+};
+
+const revenueAfterDarkProvider = {
+  "@type": "ProfessionalService",
+  name: "Revenue After Dark",
+  url: "https://www.revenueafterdarkai.com/",
+  telephone: "+1-248-942-4785",
+  contactPoint: revenueAfterDarkContactPoint,
+};
+
 export const landingPageConfigs = {
   "/after-hours-chatbot-med-spas": {
     path: "/after-hours-chatbot-med-spas",
@@ -9,11 +25,9 @@ export const landingPageConfigs = {
         "@context": "https://schema.org",
         "@type": "Service",
         name: "After Hours Chatbot for Med Spas",
-        provider: {
-          "@type": "ProfessionalService",
-          name: "Revenue After Dark",
-          url: "https://www.revenueafterdarkai.com/",
-        },
+        provider: revenueAfterDarkProvider,
+        telephone: "+1-248-942-4785",
+        contactPoint: revenueAfterDarkContactPoint,
         url: "https://www.revenueafterdarkai.com/after-hours-chatbot-med-spas",
         description:
           "After-hours chatbot built specifically for med spas to answer website visitors, capture leads, and request consultations.",
@@ -148,11 +162,9 @@ export const landingPageConfigs = {
         "@context": "https://schema.org",
         "@type": "Service",
         name: "Med Spa AI Lead Capture",
-        provider: {
-          "@type": "ProfessionalService",
-          name: "Revenue After Dark",
-          url: "https://www.revenueafterdarkai.com/",
-        },
+        provider: revenueAfterDarkProvider,
+        telephone: "+1-248-942-4785",
+        contactPoint: revenueAfterDarkContactPoint,
         url: "https://www.revenueafterdarkai.com/med-spa-ai-lead-capture",
         description:
           "AI lead capture for med spas that turns pricing inquiries and consultation requests into organized leads.",
@@ -297,11 +309,9 @@ export const landingPageConfigs = {
         "@context": "https://schema.org",
         "@type": "Service",
         name: "AI Appointment Booking for Med Spas",
-        provider: {
-          "@type": "ProfessionalService",
-          name: "Revenue After Dark",
-          url: "https://www.revenueafterdarkai.com/",
-        },
+        provider: revenueAfterDarkProvider,
+        telephone: "+1-248-942-4785",
+        contactPoint: revenueAfterDarkContactPoint,
         url: "https://www.revenueafterdarkai.com/med-spa-ai-booking",
         description:
           "AI appointment booking for med spas that guides after-hours website visitors toward consultation requests.",
@@ -436,11 +446,9 @@ export const landingPageConfigs = {
         "@context": "https://schema.org",
         "@type": "Service",
         name: "AI Pricing Assistant for Med Spas",
-        provider: {
-          "@type": "ProfessionalService",
-          name: "Revenue After Dark",
-          url: "https://www.revenueafterdarkai.com/",
-        },
+        provider: revenueAfterDarkProvider,
+        telephone: "+1-248-942-4785",
+        contactPoint: revenueAfterDarkContactPoint,
         url: "https://www.revenueafterdarkai.com/med-spa-ai-pricing",
         description:
           "AI pricing assistant for med spas that keeps Botox, filler, laser, and membership inquiries engaged after hours.",
@@ -582,11 +590,9 @@ export const landingPageConfigs = {
         "@context": "https://schema.org",
         "@type": "Service",
         name: "Med Spa Lead Management",
-        provider: {
-          "@type": "ProfessionalService",
-          name: "Revenue After Dark",
-          url: "https://www.revenueafterdarkai.com/",
-        },
+        provider: revenueAfterDarkProvider,
+        telephone: "+1-248-942-4785",
+        contactPoint: revenueAfterDarkContactPoint,
         url: "https://www.revenueafterdarkai.com/med-spa-ai-follow-up",
         description:
           "Med spa lead management focused on organizing after-hours conversations into ready-for-follow-up leads.",

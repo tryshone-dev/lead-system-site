@@ -234,7 +234,7 @@ export function ContactForm() {
               value={form.phone}
               onChange={handleChange}
               onBlur={handleBlur}
-              placeholder="(555) 123-4567"
+              placeholder="(248) 942-4785"
               className={fieldClass("phone")}
               aria-invalid={Boolean(touched.phone && errors.phone)}
             />

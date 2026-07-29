@@ -257,6 +257,12 @@ export default function TargetedLandingPage({ config }) {
                 <div className="mt-8">
                   <PrimaryButton href="#demo-request">{config.cta.buttonLabel}</PrimaryButton>
                 </div>
+                <div className="mt-4 text-sm text-slate-600">
+                  <p>Call Revenue After Dark</p>
+                  <a href="tel:+12489424785" className="mt-1 inline-block font-medium text-rose-700 transition hover:text-rose-800">
+                    (248) 942-4785
+                  </a>
+                </div>
                 <div className="mt-8 rounded-[34px] border border-white/80 bg-white/84 p-6 shadow-[0_22px_70px_rgba(97,74,89,0.08)] sm:p-7">
                   <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">Best Fit</p>
                   <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-600">
@@ -290,9 +296,9 @@ export default function TargetedLandingPage({ config }) {
 
         <footer className="pb-8 pt-4 text-sm text-slate-500">
           <p>
-            Call or text:{" "}
-            <a href="tel:+19476220143" className="font-medium text-rose-700 transition hover:text-rose-800">
-              (947) 622-0143
+            Phone:{" "}
+            <a href="tel:+12489424785" className="font-medium text-rose-700 transition hover:text-rose-800">
+              (248) 942-4785
             </a>
           </p>
         </footer>

@@ -225,7 +225,7 @@ export function AiReceptionistWaitlist() {
                 value={form.phone}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="(947) 622-0143"
+                placeholder="(248) 942-4785"
                 className={fieldClass("phone")}
                 aria-invalid={Boolean(touched.phone && errors.phone)}
               />

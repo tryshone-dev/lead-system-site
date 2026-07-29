@@ -869,12 +869,12 @@ export default function App() {
                   This solves a real business problem, shows your staff what they receive, and helps
                   you start every morning with more revenue opportunities.
                 </p>
-                <p className="mt-4 text-sm text-slate-600">
-                  Call or text:{" "}
-                  <a href="tel:+19476220143" className="font-medium text-rose-700 transition hover:text-rose-800">
-                    (947) 622-0143
+                <div className="mt-4 text-sm text-slate-600">
+                  <p>Call Revenue After Dark</p>
+                  <a href="tel:+12489424785" className="mt-1 inline-block font-medium text-rose-700 transition hover:text-rose-800">
+                    (248) 942-4785
                   </a>
-                </p>
+                </div>
               </div>
 
               <div id="demo-request">
@@ -886,9 +886,9 @@ export default function App() {
 
         <footer className="pb-8 pt-4 text-sm text-slate-500">
           <p>
-            Call or text:{" "}
-            <a href="tel:+19476220143" className="font-medium text-rose-700 transition hover:text-rose-800">
-              (947) 622-0143
+            Phone:{" "}
+            <a href="tel:+12489424785" className="font-medium text-rose-700 transition hover:text-rose-800">
+              (248) 942-4785
             </a>
           </p>
         </footer>
