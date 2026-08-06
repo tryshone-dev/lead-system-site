@@ -1,6 +1,7 @@
 import { PrimaryButton } from "./components/PrimaryButton";
 import { SectionHeading } from "./components/SectionHeading";
 import { SiteLogo } from "./components/SiteLogo";
+import { usePageSeo } from "./usePageSeo";
 
 const problemPoints = [
   "Late-night Botox questions",
@@ -72,6 +73,32 @@ function MobileStickyCTA() {
 }
 
 export default function AfterHoursAiMedSpaPage() {
+  usePageSeo({
+    title: "After-Hours AI for Med Spas | Revenue After Dark",
+    description:
+      "Most med spas lose high-intent leads at night. Revenue After Dark helps capture after-hours Botox, laser, and pricing inquiries before they book somewhere else.",
+    canonicalPath: "/after-hours-ai-med-spa",
+    ogTitle: "After-Hours AI for Med Spas | Revenue After Dark",
+    ogDescription:
+      "Capture after-hours med spa inquiries before they leave, go cold, or book somewhere else.",
+    twitterTitle: "After-Hours AI for Med Spas | Revenue After Dark",
+    twitterDescription:
+      "See how Revenue After Dark helps med spas respond after hours and capture ready-to-book website leads.",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: "After-Hours AI for Med Spas",
+      url: "https://www.revenueafterdarkai.com/after-hours-ai-med-spa",
+      description:
+        "Revenue After Dark helps med spas capture after-hours website inquiries before those leads go cold or book somewhere else.",
+      isPartOf: {
+        "@type": "WebSite",
+        name: "Revenue After Dark",
+        url: "https://www.revenueafterdarkai.com/",
+      },
+    },
+  });
+
   return (
     <div className="relative overflow-hidden bg-[var(--page-bg)] text-slate-900">
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[48rem] bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.96),_transparent_38%),radial-gradient(circle_at_top_right,_rgba(251,207,232,0.42),_transparent_34%),linear-gradient(180deg,_rgba(255,248,251,0.98),_rgba(247,242,246,0.76),_rgba(245,246,250,0))]" />

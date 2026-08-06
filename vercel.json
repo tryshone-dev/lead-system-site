@@ -1,5 +1,9 @@
 {
   "rewrites": [
+    { "source": "/after-hours-ai-med-spa", "destination": "/after-hours-ai-med-spa.html" },
+    { "source": "/after-hours-ai-med-spa/", "destination": "/after-hours-ai-med-spa.html" },
+    { "source": "/med-spa-lead-capture-michigan", "destination": "/med-spa-lead-capture-michigan.html" },
+    { "source": "/med-spa-lead-capture-michigan/", "destination": "/med-spa-lead-capture-michigan.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

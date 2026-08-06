@@ -1,7 +1,7 @@
-import { useEffect } from "react";
 import { PrimaryButton } from "./components/PrimaryButton";
 import { SectionHeading } from "./components/SectionHeading";
 import { SiteLogo } from "./components/SiteLogo";
+import { usePageSeo } from "./usePageSeo";
 
 const inquiryBullets = [
   "Visitor asks about Botox, filler, laser, or pricing",
@@ -48,28 +48,36 @@ function MobileStickyCTA() {
 }
 
 export default function MedSpaLeadCaptureMichiganPage() {
-  useEffect(() => {
-    const previousTitle = document.title;
-    const metaDescription = document.querySelector('meta[name="description"]');
-    const previousDescription = metaDescription?.getAttribute("content") || "";
-
-    document.title = "Med Spa Lead Capture Michigan | After-Hours Inquiry Conversion";
-
-    if (metaDescription) {
-      metaDescription.setAttribute(
-        "content",
-        "Capture med spa leads in Michigan before they go cold. Turn after-hours Botox, filler, and laser inquiries into booked consultations."
-      );
-    }
-
-    return () => {
-      document.title = previousTitle;
-
-      if (metaDescription) {
-        metaDescription.setAttribute("content", previousDescription);
-      }
-    };
-  }, []);
+  usePageSeo({
+    title: "Med Spa Lead Capture Michigan | After-Hours Inquiry Conversion",
+    description:
+      "Capture med spa leads in Michigan before they go cold. Turn after-hours Botox, filler, and laser inquiries into booked consultations.",
+    canonicalPath: "/med-spa-lead-capture-michigan",
+    ogTitle: "Med Spa Lead Capture Michigan | After-Hours Inquiry Conversion",
+    ogDescription:
+      "Revenue After Dark helps Michigan med spas capture after-hours website inquiries before they leave or book with another clinic.",
+    twitterTitle: "Med Spa Lead Capture Michigan | After-Hours Inquiry Conversion",
+    twitterDescription:
+      "Built for Detroit-area and Michigan med spas that want to convert more after-hours Botox, filler, laser, and pricing inquiries.",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: "Med Spa Lead Capture for Michigan Clinics",
+      url: "https://www.revenueafterdarkai.com/med-spa-lead-capture-michigan",
+      description:
+        "Revenue After Dark helps Michigan med spas capture after-hours website inquiries and turn them into booked consultations.",
+      about: {
+        "@type": "ProfessionalService",
+        name: "Revenue After Dark",
+        areaServed: ["Michigan", "Detroit", "Dearborn", "West Bloomfield", "Novi", "Birmingham", "Royal Oak"],
+      },
+      isPartOf: {
+        "@type": "WebSite",
+        name: "Revenue After Dark",
+        url: "https://www.revenueafterdarkai.com/",
+      },
+    },
+  });
 
   return (
     <div className="relative overflow-hidden bg-[var(--page-bg)] text-slate-900">
