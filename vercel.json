@@ -2,8 +2,18 @@
   "rewrites": [
     { "source": "/after-hours-ai-med-spa", "destination": "/after-hours-ai-med-spa.html" },
     { "source": "/after-hours-ai-med-spa/", "destination": "/after-hours-ai-med-spa.html" },
+    { "source": "/after-hours-chatbot-med-spas", "destination": "/after-hours-chatbot-med-spas.html" },
+    { "source": "/after-hours-chatbot-med-spas/", "destination": "/after-hours-chatbot-med-spas.html" },
     { "source": "/med-spa-lead-capture-michigan", "destination": "/med-spa-lead-capture-michigan.html" },
     { "source": "/med-spa-lead-capture-michigan/", "destination": "/med-spa-lead-capture-michigan.html" },
+    { "source": "/med-spa-ai-lead-capture", "destination": "/med-spa-ai-lead-capture.html" },
+    { "source": "/med-spa-ai-lead-capture/", "destination": "/med-spa-ai-lead-capture.html" },
+    { "source": "/med-spa-ai-booking", "destination": "/med-spa-ai-booking.html" },
+    { "source": "/med-spa-ai-booking/", "destination": "/med-spa-ai-booking.html" },
+    { "source": "/med-spa-ai-pricing", "destination": "/med-spa-ai-pricing.html" },
+    { "source": "/med-spa-ai-pricing/", "destination": "/med-spa-ai-pricing.html" },
+    { "source": "/med-spa-ai-follow-up", "destination": "/med-spa-ai-follow-up.html" },
+    { "source": "/med-spa-ai-follow-up/", "destination": "/med-spa-ai-follow-up.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
