@@ -885,6 +885,28 @@ export default function App() {
         </main>
 
         <footer className="pb-8 pt-4 text-sm text-slate-500">
+          <div className="mb-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
+              Explore More
+            </p>
+            <div className="mt-3 flex flex-wrap gap-3 text-sm">
+              <a href="/after-hours-chatbot-med-spas" className="transition hover:text-slate-900">
+                After-Hours Chatbot
+              </a>
+              <a href="/med-spa-ai-lead-capture" className="transition hover:text-slate-900">
+                Lead Capture
+              </a>
+              <a href="/med-spa-ai-booking" className="transition hover:text-slate-900">
+                AI Booking
+              </a>
+              <a href="/med-spa-ai-pricing" className="transition hover:text-slate-900">
+                AI Pricing
+              </a>
+              <a href="/med-spa-ai-follow-up" className="transition hover:text-slate-900">
+                Lead Follow-Up
+              </a>
+            </div>
+          </div>
           <p>
             Phone:{" "}
             <a href="tel:+12489424785" className="font-medium text-rose-700 transition hover:text-rose-800">
