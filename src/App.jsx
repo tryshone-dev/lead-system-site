@@ -1,5 +1,6 @@
 import { AiReceptionistWaitlist } from "./components/AiReceptionistWaitlist";
 import { ChatDemo } from "./components/ChatDemo";
+import { RevenueChatWidget } from "./components/RevenueChatWidget";
 import { ContactForm } from "./components/ContactForm";
 import { FAQItem } from "./components/FAQItem";
 import { PrimaryButton } from "./components/PrimaryButton";
@@ -917,6 +918,7 @@ export default function App() {
       </div>
 
       <MobileStickyCTA />
+      <RevenueChatWidget />
     </div>
   );
 }

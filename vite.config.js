@@ -16,6 +16,7 @@ export default defineConfig({
         medSpaAiBooking: resolve(__dirname, "med-spa-ai-booking.html"),
         medSpaAiPricing: resolve(__dirname, "med-spa-ai-pricing.html"),
         medSpaAiFollowUp: resolve(__dirname, "med-spa-ai-follow-up.html"),
+        chatWidget: resolve(__dirname, "chat-widget.html"),
       },
     },
   },

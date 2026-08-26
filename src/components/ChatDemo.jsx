@@ -1,205 +1,29 @@
-import { useState } from "react";
+import { RevenueChatClient } from "./RevenueChatClient";
 
-const demoFlows = [
-  {
-    id: "botox-pricing",
-    buttonLabel: "How much is Botox?",
-    helperText: "Pricing conversation with lead capture",
-    lead: {
-      service: "Botox consultation",
-      intent: "Pricing inquiry",
-      name: "Olivia Bennett",
-      email: "olivia@example.com",
-      phone: "(555) 214-9088",
-    },
-    messages: [
-      {
-        role: "prospect",
-        text: "How much is Botox?",
-      },
-      {
-        role: "assistant",
-        text: "Botox pricing depends on the treatment area, but most clients book a quick consultation to get exact pricing and lock in the next available opening. I can help you do that right now. What name should I put on your request?",
-      },
-      {
-        role: "prospect",
-        text: "Olivia Bennett",
-      },
-      {
-        role: "assistant",
-        text: "Perfect, Olivia. What’s the best email and phone number so we can send your pricing details and hold the soonest available opening for you?",
-      },
-      {
-        role: "prospect",
-        text: "olivia@example.com and (555) 214-9088",
-      },
-      {
-        role: "assistant",
-        text: "Perfect — your consultation request is submitted. A team member will confirm your time shortly.",
-      },
-    ],
-    ctaLabel: "Check Availability",
-  },
-  {
-    id: "laser-hair-removal",
-    buttonLabel: "Do you offer laser hair removal?",
-    helperText: "Treatment availability and booking support",
-    lead: {
-      service: "Laser hair removal",
-      intent: "Qualified service inquiry",
-      name: "Maya Carter",
-      email: "maya@example.com",
-      phone: "(555) 672-1140",
-    },
-    messages: [
-      {
-        role: "prospect",
-        text: "Do you offer laser hair removal?",
-      },
-      {
-        role: "assistant",
-        text: "Yes, we do. Most clients book a quick consultation to go over treatment areas, pricing, and lock in the next available session. I can help you get that set up right now. What name should I put on your request?",
-      },
-      {
-        role: "prospect",
-        text: "Maya Carter",
-      },
-      {
-        role: "assistant",
-        text: "Nice to meet you, Maya. What’s the best email and phone number so we can send your consultation details and hold the soonest available appointment for you?",
-      },
-      {
-        role: "prospect",
-        text: "maya@example.com and (555) 672-1140",
-      },
-      {
-        role: "assistant",
-        text: "Perfect — your consultation request is submitted. A team member will confirm your time shortly.",
-      },
-    ],
-    ctaLabel: "Check Availability",
-  },
-  {
-    id: "book-this-week",
-    buttonLabel: "Can I book for this week?",
-    helperText: "High-intent booking conversation",
-    lead: {
-      service: "Consultation booking",
-      intent: "Ready to schedule",
-      name: "Ava Thompson",
-      email: "ava@example.com",
-      phone: "(555) 390-2231",
-    },
-    messages: [
-      {
-        role: "prospect",
-        text: "Can I book for this week?",
-      },
-      {
-        role: "assistant",
-        text: "Yes — we can help with that. We can check the soonest availability and hold a spot for you this week. I can get that started right now. What name should I put on your request?",
-      },
-      {
-        role: "prospect",
-        text: "Ava Thompson",
-      },
-      {
-        role: "assistant",
-        text: "Got it, Ava. What’s the best email and phone number so we can send your options and lock in the soonest available appointment for you?",
-      },
-      {
-        role: "prospect",
-        text: "ava@example.com and (555) 390-2231",
-      },
-      {
-        role: "assistant",
-        text: "Perfect — your consultation request is submitted. A team member will confirm your time shortly.",
-      },
-    ],
-    ctaLabel: "Check This Week’s Availability",
-  },
+const starterQuestions = [
+  { label: "How much is Botox?", detail: "Approved pricing boundaries" },
+  { label: "Do you offer laser hair removal?", detail: "Grounded service information" },
+  { label: "Can I book a consultation?", detail: "Lead capture and booking handoff" },
 ];
 
-function ChatBubble({ role, text }) {
-  const isAssistant = role === "assistant";
-
-  return (
-    <div className={`flex ${isAssistant ? "justify-end" : "justify-start"}`}>
-      <div
-        className={`max-w-[92%] rounded-[24px] px-4 py-3 text-sm leading-6 shadow-sm sm:max-w-[80%] ${
-          isAssistant
-            ? "rounded-br-md bg-rose-200 text-slate-900"
-            : "rounded-bl-md bg-white/12 text-slate-100"
-        }`}
-      >
-        {text}
-      </div>
-    </div>
-  );
-}
-
 export function ChatDemo() {
-  const [activeFlowId, setActiveFlowId] = useState(demoFlows[0].id);
-
-  const activeFlow = demoFlows.find((flow) => flow.id === activeFlowId) ?? demoFlows[0];
-
   return (
-    <div className="grid gap-6 lg:grid-cols-[0.42fr_0.58fr]">
+    <div className="grid gap-6 lg:grid-cols-[0.38fr_0.62fr]">
       <div className="rounded-[34px] border border-white/75 bg-white/86 p-6 shadow-[0_24px_70px_rgba(101,77,92,0.08)] backdrop-blur">
-        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-rose-700">Lead-loss preview</p>
-        <p className="mt-3 text-sm leading-6 text-slate-600">
-          Click a common med spa question below to see how the right response keeps a high-intent prospect from drifting to another provider.
-        </p>
-
-        <div className="mt-5 space-y-3">
-          {demoFlows.map((flow) => (
-            <button
-              key={flow.id}
-              type="button"
-              onClick={() => setActiveFlowId(flow.id)}
-              className={`w-full rounded-[24px] border px-4 py-4 text-left transition ${
-                activeFlowId === flow.id
-                  ? "border-rose-200 bg-rose-50 shadow-sm"
-                  : "border-slate-200 bg-white hover:border-rose-100 hover:bg-rose-50/40"
-              }`}
-            >
-              <p className="text-base font-semibold text-slate-900">{flow.buttonLabel}</p>
-              <p className="mt-2 text-sm leading-6 text-slate-600">{flow.helperText}</p>
-            </button>
+        <p className="text-sm font-semibold uppercase tracking-[0.24em] text-rose-700">Live product demo</p>
+        <h3 className="mt-3 font-serif text-3xl text-slate-950">Ask a real question.</h3>
+        <p className="mt-3 text-sm leading-6 text-slate-600">The assistant now uses approved business knowledge, stores the conversation, and avoids answers it cannot support.</p>
+        <div className="mt-6 space-y-3">
+          {starterQuestions.map((question) => (
+            <article className="rounded-[22px] border border-slate-200 bg-white px-4 py-4" key={question.label}>
+              <strong className="block text-sm text-slate-900">{question.label}</strong>
+              <span className="mt-1 block text-xs leading-5 text-slate-500">{question.detail}</span>
+            </article>
           ))}
         </div>
+        <p className="mt-5 text-xs leading-5 text-slate-500">This demo configuration is not a medical practice. Clinical questions are safely handed to staff.</p>
       </div>
-
-      <div className="overflow-hidden rounded-[36px] border border-white/75 bg-slate-950 p-5 shadow-[0_28px_90px_rgba(91,66,83,0.12)] sm:p-6">
-        <div className="flex items-center justify-between border-b border-white/10 pb-4">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-200">Revenue After Dark Demo</p>
-            <p className="mt-1 text-sm text-slate-400">Front-end chatbot preview for your website</p>
-          </div>
-          <div className="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-300">
-            Conversion-ready
-          </div>
-        </div>
-
-        <div className="mt-5 space-y-4">
-          {activeFlow.messages.map((message, index) => (
-            <ChatBubble key={`${activeFlow.id}-${index}`} {...message} />
-          ))}
-        </div>
-
-        <div className="mt-6 rounded-[24px] border border-white/10 bg-white/6 p-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">Booking CTA</p>
-          <p className="mt-2 text-sm leading-6 text-slate-300">
-            Lead captured. Instant follow-up in motion.
-          </p>
-          <a
-            href="#contact"
-            className="mt-4 inline-flex items-center justify-center rounded-full bg-rose-200 px-5 py-3 text-sm font-semibold text-slate-900 shadow-[0_12px_30px_rgba(0,0,0,0.14)] transition hover:bg-rose-100"
-          >
-            {activeFlow.ctaLabel}
-          </a>
-        </div>
-      </div>
+      <RevenueChatClient />
     </div>
   );
 }
