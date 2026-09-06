@@ -11,8 +11,8 @@ export function ChatDemo() {
     <div className="grid gap-6 lg:grid-cols-[0.38fr_0.62fr]">
       <div className="rounded-[34px] border border-white/75 bg-white/86 p-6 shadow-[0_24px_70px_rgba(101,77,92,0.08)] backdrop-blur">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-rose-700">Live product demo</p>
-        <h3 className="mt-3 font-serif text-3xl text-slate-950">Ask a real question.</h3>
-        <p className="mt-3 text-sm leading-6 text-slate-600">The assistant now uses approved business knowledge, stores the conversation, and avoids answers it cannot support.</p>
+        <h3 className="mt-3 font-serif text-3xl text-slate-950">Try the med spa demo.</h3>
+        <p className="mt-3 text-sm leading-6 text-slate-600">Experience how this assistant could work on your med spa website. Ask about the sample practice's services, pricing, or booking.</p>
         <div className="mt-6 space-y-3">
           {starterQuestions.map((question) => (
             <article className="rounded-[22px] border border-slate-200 bg-white px-4 py-4" key={question.label}>
@@ -21,7 +21,7 @@ export function ChatDemo() {
             </article>
           ))}
         </div>
-        <p className="mt-5 text-xs leading-5 text-slate-500">This demo configuration is not a medical practice. Clinical questions are safely handed to staff.</p>
+        <p className="mt-5 text-xs leading-5 text-slate-500">Demo only, not Revenue After Dark customer support or a real medical practice. Please use sample contact details when trying lead capture.</p>
       </div>
       <RevenueChatClient />
     </div>
