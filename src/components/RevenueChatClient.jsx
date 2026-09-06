@@ -1,14 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { getOrCreateVisitorSession, replaceVisitorSession, touchVisitorSession } from "../utils/chatSession";
+import { resolveChatbotApiBaseUrl } from "../utils/chatApiConfig";
 
 const defaultBusinessSlug = "revenue-after-dark-demo";
 
 function apiUrl(path) {
-  const configured = String(import.meta.env.VITE_API_BASE_URL || "").replace(/\/$/, "");
-  const local = typeof window !== "undefined" && ["localhost", "127.0.0.1"].includes(window.location.hostname)
-    ? "http://localhost:5173"
-    : "https://revenue-after-dark-api.onrender.com";
-  return `${configured || local}${path}`;
+  const baseUrl = resolveChatbotApiBaseUrl({
+    configured: import.meta.env.VITE_API_BASE_URL,
+    hostname: typeof window === "undefined" ? "" : window.location.hostname,
+  });
+  return `${baseUrl}${path}`;
 }
 
 async function chatbotRequest(path, body) {
@@ -27,7 +28,7 @@ async function chatbotRequest(path, body) {
       requestUrl,
       error: error?.message || String(error),
     });
-    throw new Error("Chat service is unreachable. Confirm the local API is running and allows this website origin.");
+    throw new Error("We're having trouble connecting right now. Please try again shortly.");
   }
   const payload = await response.json().catch(() => ({}));
   if (!response.ok || payload.success === false) {
