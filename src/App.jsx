@@ -17,7 +17,7 @@ const proofPoints = [
   },
   {
     title: "More consults",
-    description: "Turn late-night questions into real appointments instead of lost leads.",
+    description: "Turn late-night questions into consultation requests your team can confirm.",
   },
 ];
 
@@ -25,15 +25,6 @@ const heroBullets = [
   "Capture revenue while your office is closed",
   "Wake up to qualified consultations",
   "Start every morning with new opportunities",
-];
-
-const capturedLeadSnapshot = [
-  ["Requested Service", "Botox"],
-  ["Visitor Goal", "Pricing Information"],
-  ["Lead Status", "Ready for Follow-Up"],
-  ["Conversation Started", "10:43 PM"],
-  ["Email", "olivia@example.com"],
-  ["Phone", "(555) 214-9088"],
 ];
 
 const workflow = [
@@ -115,16 +106,10 @@ const dashboardStats = [
   ["Appointments Requested", "2"],
 ];
 
-const leadQueue = [
-  { name: "Olivia Bennett", service: "Botox Consultation", status: "Ready for follow-up" },
-  { name: "Maya Carter", service: "Laser Hair Removal", status: "Consult requested" },
-  { name: "Ava Thompson", service: "Scheduling Inquiry", status: "Availability check sent" },
-];
-
 const implementationSteps = [
   {
     step: "1",
-    title: "Book Demo",
+    title: "Request Demo",
     description: "See a personalized walkthrough.",
   },
   {
@@ -159,7 +144,7 @@ const pricingPlans = [
     ],
     supportPrice: "+ $197/month",
     supportItems: [],
-    ctaLabel: "Start with Starter",
+    ctaLabel: "Request a Starter Demo",
     featured: false,
   },
   {
@@ -170,13 +155,13 @@ const pricingPlans = [
     description: "",
     includes: [
       "Everything in Starter",
-      "Instant text follow-up layer",
-      "Lead handoff workflow",
-      "Higher-intent booking prompts",
+      "Guided consultation request flow",
+      "Organized lead handoff",
+      "Higher-intent follow-up prompts",
     ],
     supportPrice: "+ $397/month",
     supportItems: [],
-    ctaLabel: "Start with Growth",
+    ctaLabel: "Request a Growth Demo",
     featured: true,
   },
   {
@@ -187,13 +172,13 @@ const pricingPlans = [
     description: "",
     includes: [
       "Website capture",
-      "Instant text follow-up",
-      "CRM or inbox routing",
-      "Missed-call recovery can be added later",
+      "Approved question handling",
+      "Consultation request handoff",
+      "Custom workflow planning",
     ],
     supportPrice: "For offices that want full coverage",
     supportItems: [],
-    ctaLabel: "Talk Through Options",
+    ctaLabel: "Request a Demo",
     featured: false,
   },
 ];
@@ -207,7 +192,7 @@ const faqs = [
   {
     question: "Does this work with my booking system?",
     answer:
-      "Yes. It can hand leads into your booking flow, CRM, calendar, or follow-up process.",
+      "Revenue After Dark collects consultation requests and can direct visitors to your existing booking link. Your staff confirms the appointment in the system you already use.",
   },
   {
     question: "Can I customize responses?",
@@ -227,39 +212,28 @@ const faqs = [
   {
     question: "Can it transfer to a staff member?",
     answer:
-      "Yes. Workflows can be configured so urgent or special cases route to the right person or follow-up channel.",
+      "It can flag a conversation for staff follow-up and preserve the context your team needs. It does not promise a live staff transfer unless that handoff is configured separately.",
   },
   {
     question: "How long does setup take?",
     answer:
-      "Most setups move quickly once we have your services, pricing guidance, and lead workflow details.",
+      "Setup begins after we review your website, approved services, pricing boundaries, office hours, and preferred lead handoff. We confirm timing during the walkthrough.",
   },
   {
     question: "How does my team receive leads?",
     answer:
-      "Your team receives captured details, service interest, and conversation context so follow-up starts with clarity.",
+      "Captured leads, contact details, service interest, and conversation history are organized for staff review in the Revenue After Dark lead workflow.",
   },
   {
     question: "Can I edit the knowledge base?",
     answer:
-      "Yes. Your treatments, FAQs, pricing guidance, and policies can be updated as your med spa evolves.",
+      "Yes. Approved treatments, hours, FAQs, pricing boundaries, and policies can be updated as your med spa changes.",
   },
   {
     question: "Is patient information handled securely?",
     answer:
-      "Lead data should be handled with secure workflows and appropriate access controls. Sensitive medical advice still stays with your staff.",
+      "Revenue After Dark is designed for basic lead and consultation-request information, not medical records or clinical advice. We do not claim HIPAA compliance; specific privacy or compliance requirements should be reviewed before launch.",
   },
-];
-
-const aiReceptionistFeatures = [
-  "Answers incoming calls 24/7",
-  "Handles common treatment and appointment questions",
-  "Qualifies new leads",
-  "Books consultations automatically",
-  "Sends confirmation and follow-up texts",
-  "Notifies your team instantly",
-  "Stores call transcripts and lead history",
-  "Integrates with the Revenue After Dark dashboard",
 ];
 
 function Badge({ children }) {
@@ -322,35 +296,6 @@ function LeadField({ label, value }) {
     <div className="flex items-center justify-between gap-4 border-b border-white/10 py-3 last:border-b-0">
       <dt className="text-sm text-slate-400">{label}</dt>
       <dd className="text-sm font-medium text-white">{value}</dd>
-    </div>
-  );
-}
-
-function SnapshotCard({ title, description, rows }) {
-  return (
-    <div className="rounded-[34px] border border-white/80 bg-white/88 p-6 shadow-[0_22px_70px_rgba(102,76,91,0.08)] backdrop-blur sm:p-7">
-      <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-700">{title}</p>
-      {description ? <p className="mt-3 text-sm leading-7 text-slate-600">{description}</p> : null}
-      <dl className="mt-6 space-y-3 text-sm">
-        {rows.map(([label, value]) => (
-          <div key={label} className="flex items-center justify-between gap-4">
-            <dt className="text-slate-500">{label}</dt>
-            <dd className="max-w-[13rem] text-right font-medium text-slate-900">{value}</dd>
-          </div>
-        ))}
-      </dl>
-    </div>
-  );
-}
-
-function QueueRow({ name, service, status }) {
-  return (
-    <div className="flex items-start justify-between gap-4 rounded-[22px] border border-slate-200 bg-white/88 px-4 py-4">
-      <div>
-        <p className="text-sm font-semibold text-slate-900">{name}</p>
-        <p className="mt-1 text-sm text-slate-600">{service}</p>
-      </div>
-      <p className="text-right text-xs font-semibold uppercase tracking-[0.18em] text-rose-700">{status}</p>
     </div>
   );
 }
@@ -428,7 +373,7 @@ function PricingCard({
       ) : null}
 
       <div className="mt-8">
-        <PrimaryButton href="#contact" className="w-full sm:w-auto">
+        <PrimaryButton href="#demo-request" className="w-full sm:w-auto">
           {ctaLabel || "Get Started"}
         </PrimaryButton>
       </div>
@@ -453,10 +398,10 @@ function MobileStickyCTA() {
       <div className="mx-auto flex max-w-lg items-center justify-between gap-3">
         <div className="min-w-0">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-rose-700">Revenue After Dark</p>
-          <p className="truncate text-sm text-slate-600">Turn nights into booked appointments</p>
+          <p className="truncate text-sm text-slate-600">Turn nights into consultation requests</p>
         </div>
         <PrimaryButton href="#contact" className="shrink-0 px-5 py-3">
-          Book My Demo
+          Request a Demo
         </PrimaryButton>
       </div>
     </div>
@@ -509,12 +454,12 @@ export default function App() {
                 conversation moving.
               </p>
               <p className="mt-6 text-sm text-slate-500">
-                Built specifically to convert after-hours website visitors into booked consultations.
+                Built specifically to turn after-hours website visitors into qualified consultation requests.
               </p>
 
               <div className="mt-5 flex flex-col gap-4 sm:flex-row">
-                <PrimaryButton href="#contact">Book a Demo</PrimaryButton>
-                <SecondaryButton href="#demo">See It On Your Site</SecondaryButton>
+                <PrimaryButton href="#contact">Request a Demo</PrimaryButton>
+                <SecondaryButton href="#demo">Try the Live Demo</SecondaryButton>
               </div>
               <p className="mt-4 text-sm font-medium text-slate-600">
                 After-hours silence is costing you bookings every week.
@@ -574,25 +519,9 @@ export default function App() {
             </div>
             <p className="mt-6 max-w-3xl text-sm leading-7 text-slate-600">
               This does not replace your phone system. It captures website visitors who may leave
-              without calling, then helps your team follow up faster. Turn nights into booked
-              appointments and start every morning with new opportunities.
+              without calling, then helps your team follow up faster. Turn nights into consultation
+              requests and start every morning with new opportunities.
             </p>
-          </section>
-
-          <section className="py-16 sm:py-20">
-            <SectionHeading
-              eyebrow="Captured Lead Snapshot"
-              title="Captured Lead Snapshot"
-              description="Once the conversation is complete, the lead is organized in a format your team can act on immediately."
-            />
-
-            <div className="mt-12 max-w-3xl">
-              <SnapshotCard
-                title="Captured Lead Snapshot"
-                description="This should feel like a real CRM record, not just a chat transcript."
-                rows={capturedLeadSnapshot}
-              />
-            </div>
           </section>
 
           <section id="how-it-works" className="py-16 sm:py-20">
@@ -676,32 +605,6 @@ export default function App() {
             </div>
           </section>
 
-          <section id="lead-queue" className="py-16 sm:py-20">
-            <SectionHeading
-              eyebrow="Lead Queue"
-              title="Lead Queue"
-              description="Each conversation becomes an organized record your team can review quickly instead of reconstructing the lead from scratch."
-            />
-
-            <div className="mt-12 max-w-4xl">
-              <div className="rounded-[34px] border border-white/80 bg-white/88 p-6 shadow-[0_22px_70px_rgba(102,76,91,0.08)] backdrop-blur sm:p-7">
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-700">
-                  Lead Queue
-                </p>
-                <p className="mt-3 text-sm leading-7 text-slate-600">
-                  Your team starts the day with contact details, treatment interest, and context
-                  already captured.
-                </p>
-
-                <div className="mt-6 space-y-3">
-                  {leadQueue.map((item) => (
-                    <QueueRow key={item.name} {...item} />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </section>
-
           <section className="py-16 sm:py-20">
             <SectionHeading
               eyebrow="Built Specifically for Med Spas"
@@ -710,8 +613,8 @@ export default function App() {
             />
             <p className="mt-6 max-w-3xl text-sm leading-7 text-slate-600">
               It is especially relevant for Michigan med spas and aesthetic clinics in Detroit,
-              Dearborn, West Bloomfield, Novi, Birmingham, and Royal Oak that want more booked
-              consults from the traffic they already have.
+              Dearborn, West Bloomfield, Novi, Birmingham, and Royal Oak that want more consultation
+              requests from the traffic they already have.
               <span> </span>
               <a href="/med-spa-lead-capture-michigan" className="font-medium text-rose-700 transition hover:text-rose-800">
                 Explore the Michigan landing page.
@@ -746,14 +649,14 @@ export default function App() {
 
           <CTABlock
             title="See Revenue After Dark on Your Website"
-            description="Book a personalized demo and see how Revenue After Dark can respond to after-hours visitors, capture lead information, and prepare your team to follow up."
-            buttonLabel="Book My Demo"
+            description="Request a personalized demo and see how Revenue After Dark can respond to after-hours visitors, capture lead information, and prepare your team to follow up."
+            buttonLabel="Request a Demo"
           />
 
           <section className="py-16 sm:py-20">
             <SectionHeading
               eyebrow="Implementation"
-              title="What Happens After You Book"
+              title="What Happens After You Request a Demo"
               description="Short setup. Minimal effort. Faster lead capture as soon as the system is live."
             />
 
@@ -783,9 +686,9 @@ export default function App() {
           </section>
 
           <CTABlock
-            title="Turn After-Hours Interest Into Booked Consultations"
+            title="Turn After-Hours Interest Into Consultation Requests"
             description="Choose the right setup for your med spa, then see how Revenue After Dark would work with your services, pricing, and lead workflow."
-            buttonLabel="Book My Demo"
+            buttonLabel="Request a Demo"
             supportLine="Personalized walkthrough. No generic sales presentation."
           />
 
@@ -803,45 +706,8 @@ export default function App() {
             </div>
           </section>
 
-          <section className="py-12 sm:py-16">
-            <div className="rounded-[38px] border border-white/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.92),rgba(247,241,245,0.92),rgba(244,247,249,0.9))] p-8 shadow-[0_24px_70px_rgba(102,76,91,0.08)] sm:p-10">
-              <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
-                <div>
-                  <div className="inline-flex items-center rounded-full border border-rose-200 bg-rose-50 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.24em] text-rose-700">
-                    Coming Soon
-                  </div>
-                  <h2 className="mt-5 max-w-3xl font-serif text-4xl leading-[1.02] tracking-tight text-slate-900 sm:text-5xl">
-                    24/7 AI Receptionist for Med Spas
-                  </h2>
-                  <p className="mt-5 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-                    Never miss a lead after hours. Answer calls, qualify prospects, book
-                    appointments, and follow up automatically.
-                  </p>
-
-                  <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-                    {aiReceptionistFeatures.map((item) => (
-                      <li
-                        key={item}
-                        className="rounded-[24px] border border-white/80 bg-white/84 px-5 py-4 text-sm leading-7 text-slate-700 shadow-[0_18px_50px_rgba(103,77,92,0.08)] backdrop-blur"
-                      >
-                        <span className="font-semibold text-rose-700">✓</span>
-                        <span className="ml-3">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <p className="mt-8 max-w-3xl text-sm leading-7 text-slate-600">
-                    Future Revenue After Dark Module:
-                    <span> </span>
-                    AI Receptionist is currently in development and will integrate directly with
-                    lead capture, appointment booking, follow-up automation, and reporting inside
-                    the Operator Dashboard.
-                  </p>
-                </div>
-
-                <AiReceptionistWaitlist />
-              </div>
-            </div>
+          <section className="py-10 sm:py-12">
+            <AiReceptionistWaitlist />
           </section>
 
           <section id="contact" className="py-16 sm:py-20">
@@ -850,10 +716,10 @@ export default function App() {
                 <SectionHeading
                   eyebrow="Final Step"
                   title="Don’t lose tomorrow’s appointments tonight."
-                  description="Book a personalized demo and see Revenue After Dark on your own website."
+                  description="Request a personalized demo and see Revenue After Dark on your own website."
                 />
                 <div className="mt-8">
-                  <PrimaryButton href="#demo-request">Book My Demo</PrimaryButton>
+                  <PrimaryButton href="#demo-request">Request a Demo</PrimaryButton>
                 </div>
                 <div className="mt-8 rounded-[34px] border border-white/80 bg-white/84 p-6 shadow-[0_22px_70px_rgba(97,74,89,0.08)] sm:p-7">
                   <p className="text-sm font-semibold uppercase tracking-[0.22em] text-slate-500">
@@ -911,6 +777,10 @@ export default function App() {
             Phone:{" "}
             <a href="tel:+12489424785" className="font-medium text-rose-700 transition hover:text-rose-800">
               (248) 942-4785
+            </a>
+            <span className="mx-2" aria-hidden="true">·</span>
+            <a href="/privacy" className="font-medium text-rose-700 transition hover:text-rose-800">
+              Privacy Notice
             </a>
           </p>
         </footer>

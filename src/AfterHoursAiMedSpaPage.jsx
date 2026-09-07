@@ -19,12 +19,12 @@ const workflow = [
   "A prospect visits your site after hours",
   "They ask a question about services or pricing",
   "They stay engaged instead of leaving for another med spa",
-  "The conversation guides them toward booking a consult",
+  "The conversation guides them toward requesting a consult",
 ];
 
 const benefits = [
   "Capture leads you would normally lose",
-  "Increase booked consultations without more traffic",
+  "Create more consultation opportunities from existing traffic",
   "Convert late-night interest into real revenue",
   "Stay competitive in a crowded local market",
 ];
@@ -65,7 +65,7 @@ function MobileStickyCTA() {
           <p className="truncate text-sm text-slate-600">Instant website lead response for med spas.</p>
         </div>
         <PrimaryButton href="/#contact" className="shrink-0 px-5 py-3">
-          Book a Demo
+          Request a Demo
         </PrimaryButton>
       </div>
     </div>
@@ -116,7 +116,7 @@ export default function AfterHoursAiMedSpaPage() {
               After-Hours AI
             </a>
             <a href="/#contact" className="transition hover:text-slate-900">
-              Book a Demo
+              Request a Demo
             </a>
           </nav>
         </header>
@@ -140,7 +140,7 @@ export default function AfterHoursAiMedSpaPage() {
                 </a>
               </p>
               <div className="mt-8">
-                <PrimaryButton href="/#contact">Book a Demo</PrimaryButton>
+                <PrimaryButton href="/#contact">Request a Demo</PrimaryButton>
               </div>
             </div>
 
@@ -150,7 +150,7 @@ export default function AfterHoursAiMedSpaPage() {
                 Ready buyers do not wait for tomorrow.
               </h2>
               <p className="mt-4 text-sm leading-7 text-slate-600">
-                After-work shoppers and weekend prospects are often the closest to booking. The page structure stays the same here so the experience matches the main site, while the message stays focused on after-hours recovery.
+                After-work shoppers and weekend prospects are often the closest to taking the next step. A fast, relevant response helps preserve that interest for staff follow-up.
               </p>
               <div className="mt-6 space-y-4 rounded-[30px] bg-slate-950 p-5 text-slate-50 sm:p-6">
                 <div className="flex items-center justify-between text-xs uppercase tracking-[0.24em] text-slate-400">
@@ -210,7 +210,7 @@ export default function AfterHoursAiMedSpaPage() {
             />
 
             <p className="mt-8 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
-              It responds immediately, answers common questions, and moves the conversation toward a booked consultation while the lead is still engaged.
+              It responds immediately, answers approved questions, and collects a consultation request while the lead is still engaged. Your staff confirms the appointment.
             </p>
             <p className="mt-4 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
               No delays. No missed opportunities.
@@ -257,11 +257,15 @@ export default function AfterHoursAiMedSpaPage() {
                 If you’re not responding instantly, someone else is.
               </p>
               <div className="mt-8">
-                <PrimaryButton href="/#contact">Book a Demo</PrimaryButton>
+                <PrimaryButton href="/#contact">Request a Demo</PrimaryButton>
               </div>
             </div>
           </section>
         </main>
+
+        <footer className="pb-8 pt-4 text-sm text-slate-500">
+          <a href="/privacy" className="font-medium text-rose-700 transition hover:text-rose-800">Privacy Notice</a>
+        </footer>
       </div>
 
       <MobileStickyCTA />

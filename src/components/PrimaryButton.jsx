@@ -1,5 +1,5 @@
 export function PrimaryButton({ href, children, className = "" }) {
-  const label = children || "Book a Demo";
+  const label = children || "Request a Demo";
 
   return (
     <a

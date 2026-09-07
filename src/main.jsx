@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import AfterHoursAiMedSpaPage from "./AfterHoursAiMedSpaPage";
 import MedSpaLeadCaptureMichiganPage from "./MedSpaLeadCaptureMichiganPage";
+import PrivacyPage from "./PrivacyPage";
 import TargetedLandingPage from "./TargetedLandingPage";
 import { landingPageConfigs } from "./landingPageConfigs";
 import "./index.css";
@@ -16,6 +17,8 @@ const Page =
     ? AfterHoursAiMedSpaPage
     : pathname === "/med-spa-lead-capture-michigan"
       ? MedSpaLeadCaptureMichiganPage
+      : pathname === "/privacy"
+        ? PrivacyPage
       : App;
 
 ReactDOM.createRoot(document.getElementById("root")).render(

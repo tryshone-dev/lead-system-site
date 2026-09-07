@@ -40,8 +40,8 @@ export const landingPageConfigs = {
       eyebrow: "After Hours Chatbot for Med Spas",
       title: "Stop Losing Patients After Business Hours",
       description:
-        "When your office closes, Revenue After Dark keeps answering questions, capturing leads, and booking consultations automatically.",
-      ctaLabel: "Book My Demo",
+        "When your office closes, Revenue After Dark keeps answering approved questions and collecting consultation requests for staff follow-up.",
+      ctaLabel: "Request a Demo",
       panelEyebrow: "After-hours coverage",
       panelTitle: "Keep answering after your front desk signs off.",
       panelDescription:
@@ -89,7 +89,7 @@ export const landingPageConfigs = {
         "Conversation starts",
         "Lead captured",
         "Consultation requested",
-        "Team notified",
+        "Lead ready for staff review",
         "Revenue protected",
       ],
     },
@@ -121,8 +121,8 @@ export const landingPageConfigs = {
     cta: {
       title: "See Revenue After Dark On Your Website",
       description:
-        "Book a personalized demo and see how Revenue After Dark would handle after-hours questions for your own med spa.",
-      buttonLabel: "Book My Demo",
+        "Request a personalized demo and see how Revenue After Dark would handle after-hours questions for your own med spa.",
+      buttonLabel: "Request a Demo",
     },
     faqs: [
       {
@@ -178,7 +178,7 @@ export const landingPageConfigs = {
       title: "Every Website Visitor Is Worth More Than You Think",
       description:
         "Capture every pricing inquiry, consultation request, and treatment question before the visitor disappears.",
-      ctaLabel: "Capture More Leads",
+      ctaLabel: "Request a Demo",
       panelEyebrow: "Lead visibility",
       panelTitle: "Know who asked, what they wanted, and how ready they were.",
       panelDescription:
@@ -209,7 +209,7 @@ export const landingPageConfigs = {
         "Flags consultation intent",
         "Creates a clean lead record",
         "Supports pricing and service questions",
-        "Notifies the team with context",
+        "Saves the lead with context for staff review",
       ],
     },
     demo: {
@@ -226,7 +226,7 @@ export const landingPageConfigs = {
         "Question gets answered",
         "Contact details captured",
         "Lead record created",
-        "Team notified",
+        "Lead ready for staff review",
         "Follow-up starts faster",
       ],
     },
@@ -243,7 +243,7 @@ export const landingPageConfigs = {
         ["Phone", "(555) 214-9088"],
       ],
       metrics: [
-        ["New Lead Notifications", "5"],
+        ["New Leads Captured", "5"],
         ["Average Response Time", "29 sec"],
         ["Contact Details Captured", "4"],
         ["Qualified Inquiries", "3"],
@@ -269,7 +269,7 @@ export const landingPageConfigs = {
       title: "Capture More Leads",
       description:
         "See how Revenue After Dark can turn more of your after-hours website traffic into named, reachable opportunities.",
-      buttonLabel: "Capture More Leads",
+      buttonLabel: "Request a Demo",
     },
     faqs: [
       {
@@ -285,7 +285,7 @@ export const landingPageConfigs = {
       {
         question: "Does it notify my team?",
         answer:
-          "Yes. Notifications and handoff workflows can be configured so your staff sees new captured leads promptly.",
+          "Captured leads are organized with contact details and conversation context for staff review. The walkthrough confirms the handoff available for your setup.",
       },
       {
         question: "Can it handle consultation requests?",
@@ -322,10 +322,10 @@ export const landingPageConfigs = {
     navLabel: "AI Booking",
     hero: {
       eyebrow: "AI Appointment Booking for Med Spas",
-      title: "Turn Website Visitors Into Booked Consultations",
+      title: "Turn Website Visitors Into Consultation Requests",
       description:
-        "Revenue After Dark guides high-intent visitors from questions to scheduled consultations while your office is closed.",
-      ctaLabel: "Book More Consultations",
+        "Revenue After Dark guides high-intent visitors from questions to consultation requests your staff can confirm.",
+      ctaLabel: "Request a Demo",
       panelEyebrow: "Booking momentum",
       panelTitle: "Keep the visitor moving toward the calendar.",
       panelDescription:
@@ -365,7 +365,7 @@ export const landingPageConfigs = {
         "The visitor gets a clear next step instead of a dead end, and your team gets the information needed to close the loop fast.",
     },
     results: {
-      title: "From visitor to booked consultation",
+      title: "From visitor to consultation request",
       description:
         "The experience should feel simple for the visitor and organized for your team.",
       steps: [
@@ -374,7 +374,7 @@ export const landingPageConfigs = {
         "Lead Captured",
         "Consultation Requested",
         "Team Follow-Up",
-        "Appointment Booked",
+        "Staff Confirms Appointment",
       ],
     },
     team: {
@@ -391,7 +391,7 @@ export const landingPageConfigs = {
       ],
     },
     how: {
-      title: "How AI appointment booking supports your med spa",
+      title: "How consultation request capture supports your med spa",
       description:
         "The system does not finalize the clinical booking on its own. It creates the fastest path from question to qualified consultation request.",
       steps: [
@@ -403,10 +403,10 @@ export const landingPageConfigs = {
       ],
     },
     cta: {
-      title: "Book More Consultations",
+      title: "Capture More Consultation Requests",
       description:
         "See how Revenue After Dark can turn more after-hours traffic into real consultation opportunities for your med spa.",
-      buttonLabel: "Book More Consultations",
+      buttonLabel: "Request a Demo",
     },
     faqs: [
       {
@@ -462,7 +462,7 @@ export const landingPageConfigs = {
       title: "Answer Pricing Questions Without Losing the Lead",
       description:
         "Most visitors asking about Botox, fillers, laser treatments, or memberships are ready to book. Revenue After Dark keeps them engaged while collecting everything your team needs.",
-      ctaLabel: "Never Lose Another Pricing Inquiry",
+      ctaLabel: "Request a Demo",
       panelEyebrow: "Pricing intent",
       panelTitle: "Pricing questions are often the moment the lead decides.",
       panelDescription:
@@ -550,7 +550,7 @@ export const landingPageConfigs = {
       title: "Never Lose Another Pricing Inquiry",
       description:
         "See how Revenue After Dark can keep pricing conversations from turning into missed revenue.",
-      buttonLabel: "Never Lose Another Pricing Inquiry",
+      buttonLabel: "Request a Demo",
     },
     faqs: [
       {
@@ -606,7 +606,7 @@ export const landingPageConfigs = {
       title: "Your Team Starts Every Morning With Qualified Leads",
       description:
         "Wake up to organized conversations, captured contact information, treatment interest, and consultation requests ready for follow-up.",
-      ctaLabel: "See The Owner Dashboard",
+      ctaLabel: "Request a Dashboard Walkthrough",
       panelEyebrow: "Morning view",
       panelTitle: "Know exactly what happened while your office was closed.",
       panelDescription:
@@ -695,10 +695,10 @@ export const landingPageConfigs = {
       ],
     },
     cta: {
-      title: "See The Owner Dashboard",
+      title: "See What Your Team Receives",
       description:
         "See how Revenue After Dark helps your team start every morning with better information and better opportunities to book.",
-      buttonLabel: "See The Owner Dashboard",
+      buttonLabel: "Request a Dashboard Walkthrough",
     },
     faqs: [
       {

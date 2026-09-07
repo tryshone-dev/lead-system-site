@@ -40,7 +40,7 @@ function MobileStickyCTA() {
           <p className="truncate text-sm text-slate-600">Med spa lead capture for Michigan clinics</p>
         </div>
         <PrimaryButton href="/#contact" className="shrink-0 px-5 py-3">
-          Book a Demo
+          Request a Demo
         </PrimaryButton>
       </div>
     </div>
@@ -51,7 +51,7 @@ export default function MedSpaLeadCaptureMichiganPage() {
   usePageSeo({
     title: "Med Spa Lead Capture Michigan | After-Hours Inquiry Conversion",
     description:
-      "Capture med spa leads in Michigan before they go cold. Turn after-hours Botox, filler, and laser inquiries into booked consultations.",
+      "Capture med spa leads in Michigan before they go cold. Turn after-hours Botox, filler, and laser inquiries into consultation requests.",
     canonicalPath: "/med-spa-lead-capture-michigan",
     ogTitle: "Med Spa Lead Capture Michigan | After-Hours Inquiry Conversion",
     ogDescription:
@@ -65,7 +65,7 @@ export default function MedSpaLeadCaptureMichiganPage() {
       name: "Med Spa Lead Capture for Michigan Clinics",
       url: "https://www.revenueafterdarkai.com/med-spa-lead-capture-michigan",
       description:
-        "Revenue After Dark helps Michigan med spas capture after-hours website inquiries and turn them into booked consultations.",
+        "Revenue After Dark helps Michigan med spas capture after-hours website inquiries and turn them into consultation requests for staff follow-up.",
       about: {
         "@type": "ProfessionalService",
         name: "Revenue After Dark",
@@ -99,7 +99,7 @@ export default function MedSpaLeadCaptureMichiganPage() {
               Michigan Lead Capture
             </a>
             <a href="/#contact" className="transition hover:text-slate-900">
-              Book a Demo
+              Request a Demo
             </a>
           </nav>
         </header>
@@ -132,7 +132,7 @@ export default function MedSpaLeadCaptureMichiganPage() {
 
           <section className="py-16 sm:py-20">
             <SectionHeading
-              eyebrow="SECTION 1"
+              eyebrow="After-Hours Intent"
               title="Most Med Spa Leads Don’t Wait Until Morning"
               description="Someone asking about pricing at 9PM is not just browsing. They are comparing options, checking availability, and deciding where to book."
             />
@@ -140,7 +140,7 @@ export default function MedSpaLeadCaptureMichiganPage() {
 
           <section className="py-16 sm:py-20">
             <SectionHeading
-              eyebrow="SECTION 2"
+              eyebrow="Where Leads Get Lost"
               title="Where After-Hours Leads Get Lost"
               description="This is where local med spa lead generation usually breaks down."
             />
@@ -154,9 +154,9 @@ export default function MedSpaLeadCaptureMichiganPage() {
 
           <section id="section-3" className="py-16 sm:py-20">
             <SectionHeading
-              eyebrow="SECTION 3"
+              eyebrow="How It Works"
               title="How Revenue After Dark works"
-              description="A simple after-hours response system built to keep high-intent conversations moving toward a booked consultation."
+              description="A simple after-hours response system built to keep high-intent conversations moving toward a consultation request."
             />
 
             <ul className="mt-12 grid gap-4 md:grid-cols-3">
@@ -168,9 +168,9 @@ export default function MedSpaLeadCaptureMichiganPage() {
 
           <section className="py-16 sm:py-20">
             <SectionHeading
-              eyebrow="SECTION 4"
+              eyebrow="Built for Michigan"
               title="Built for Michigan med spas"
-              description="Designed for clinics in Detroit, Dearborn, West Bloomfield, Novi, Birmingham, Royal Oak, and surrounding areas that want more booked consults from the traffic they already have."
+              description="Designed for clinics in Detroit, Dearborn, West Bloomfield, Novi, Birmingham, Royal Oak, and surrounding areas that want more consultation requests from the traffic they already have."
             />
 
             <div className="mt-8">
@@ -183,10 +183,14 @@ export default function MedSpaLeadCaptureMichiganPage() {
             </div>
 
             <div className="mt-8">
-              <PrimaryButton href="/#contact">Book a Demo</PrimaryButton>
+              <PrimaryButton href="/#contact">Request a Demo</PrimaryButton>
             </div>
           </section>
         </main>
+
+        <footer className="pb-8 pt-4 text-sm text-slate-500">
+          <a href="/privacy" className="font-medium text-rose-700 transition hover:text-rose-800">Privacy Notice</a>
+        </footer>
       </div>
 
       <MobileStickyCTA />

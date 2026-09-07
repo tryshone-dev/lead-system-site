@@ -1,59 +1,15 @@
 import { useState } from "react";
-
-const initialForm = {
-  name: "",
-  business: "",
-  email: "",
-  phone: "",
-  interest: "Botox and injectables",
-  message: "",
-};
+import {
+  buildInquiryPayload,
+  emptyInquiryForm,
+  getInquiryErrors,
+  validateInquiryField,
+} from "../utils/inquiryForm";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xvzdlvye";
 
-function validateField(name, value) {
-  const trimmedValue = value.trim();
-
-  if (name === "name") {
-    if (!trimmedValue) return "Please enter your name.";
-    if (trimmedValue.length < 2) return "Name must be at least 2 characters.";
-  }
-
-  if (name === "business") {
-    if (!trimmedValue) return "Please enter your med spa or practice name.";
-  }
-
-  if (name === "email") {
-    if (!trimmedValue) return "Please enter your email address.";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedValue)) {
-      return "Please enter a valid email address.";
-    }
-  }
-
-  if (name === "phone") {
-    if (!trimmedValue) return "Please enter your phone number.";
-  }
-
-  if (name === "message") {
-    if (!trimmedValue) return "Please share a quick note about your goals.";
-    if (trimmedValue.length < 12) return "Please add a little more detail so we can follow up well.";
-  }
-
-  return "";
-}
-
-function getErrors(form) {
-  return {
-    name: validateField("name", form.name),
-    business: validateField("business", form.business),
-    email: validateField("email", form.email),
-    phone: validateField("phone", form.phone),
-    message: validateField("message", form.message),
-  };
-}
-
 export function ContactForm() {
-  const [form, setForm] = useState(initialForm);
+  const [form, setForm] = useState(emptyInquiryForm);
   const [touched, setTouched] = useState({});
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState("");
@@ -69,7 +25,7 @@ export function ContactForm() {
     if (touched[name]) {
       setErrors((current) => ({
         ...current,
-        [name]: validateField(name, value),
+        [name]: validateInquiryField(name, value),
       }));
     }
   }
@@ -79,7 +35,7 @@ export function ContactForm() {
     setTouched((current) => ({ ...current, [name]: true }));
     setErrors((current) => ({
       ...current,
-      [name]: validateField(name, value),
+      [name]: validateInquiryField(name, value),
     }));
   }
 
@@ -90,14 +46,12 @@ export function ContactForm() {
       return;
     }
 
-    const nextErrors = getErrors(form);
+    const nextErrors = getInquiryErrors(form);
     setErrors(nextErrors);
     setTouched({
       name: true,
       business: true,
       email: true,
-      phone: true,
-      message: true,
     });
 
     const isValid = !Object.values(nextErrors).some(Boolean);
@@ -118,14 +72,7 @@ export function ContactForm() {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify({
-          name: form.name,
-          business: form.business,
-          email: form.email,
-          phone: form.phone,
-          interest: form.interest,
-          message: form.message,
-        }),
+        body: JSON.stringify(buildInquiryPayload(form, window.location)),
       });
 
       if (!response.ok) {
@@ -138,8 +85,12 @@ export function ContactForm() {
         });
       }
 
-      setSuccessMessage("Thanks — your demo request has been sent.");
-      setForm(initialForm);
+      if (typeof window !== "undefined" && typeof window.clarity === "function") {
+        window.clarity("event", "demo_request_submitted");
+      }
+
+      setSuccessMessage("Your demo request was received. We’ll contact you to arrange the walkthrough.");
+      setForm(emptyInquiryForm);
       setTouched({});
       setErrors({});
     } catch {
@@ -169,18 +120,18 @@ export function ContactForm() {
   return (
     <div className="rounded-[36px] border border-white/80 bg-white/90 p-6 shadow-[0_28px_80px_rgba(96,73,88,0.1)] backdrop-blur sm:p-8">
       <div className="mb-6">
-        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-700">Book a Demo</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-700">Request a Demo</p>
         <h3 className="mt-3 text-2xl font-semibold text-slate-900">Tell us about your practice</h3>
         <p className="mt-3 text-sm leading-7 text-slate-600">
           We’ll use this information to tailor the walkthrough to your services, lead flow, and booking goals.
         </p>
-        <p className="mt-3 text-sm text-slate-500">No tech setup. No commitment. Just a quick walkthrough.</p>
+        <p className="mt-3 text-sm text-slate-500">Submit the request and we’ll contact you to arrange the walkthrough.</p>
       </div>
 
       <form className="space-y-5" onSubmit={handleSubmit} noValidate>
         <div className="grid gap-5 sm:grid-cols-2">
           <label className="block">
-            <span className="text-sm font-medium text-slate-700">Name</span>
+            <span className="text-sm font-medium text-slate-700">Name <span className="text-rose-700">Required</span></span>
             <input
               type="text"
               name="name"
@@ -190,12 +141,13 @@ export function ContactForm() {
               placeholder="Jamie Carter"
               className={fieldClass("name")}
               aria-invalid={Boolean(touched.name && errors.name)}
+              required
             />
             <FieldError name="name" />
           </label>
 
           <label className="block">
-            <span className="text-sm font-medium text-slate-700">Med spa or practice</span>
+            <span className="text-sm font-medium text-slate-700">Med spa or practice <span className="text-rose-700">Required</span></span>
             <input
               type="text"
               name="business"
@@ -205,6 +157,7 @@ export function ContactForm() {
               placeholder="Luna Aesthetics"
               className={fieldClass("business")}
               aria-invalid={Boolean(touched.business && errors.business)}
+              required
             />
             <FieldError name="business" />
           </label>
@@ -212,7 +165,7 @@ export function ContactForm() {
 
         <div className="grid gap-5 sm:grid-cols-2">
           <label className="block">
-            <span className="text-sm font-medium text-slate-700">Email</span>
+            <span className="text-sm font-medium text-slate-700">Email <span className="text-rose-700">Required</span></span>
             <input
               type="email"
               name="email"
@@ -222,12 +175,13 @@ export function ContactForm() {
               placeholder="jamie@lunaaesthetics.com"
               className={fieldClass("email")}
               aria-invalid={Boolean(touched.email && errors.email)}
+              required
             />
             <FieldError name="email" />
           </label>
 
           <label className="block">
-            <span className="text-sm font-medium text-slate-700">Phone</span>
+            <span className="text-sm font-medium text-slate-700">Phone <span className="text-slate-400">Optional</span></span>
             <input
               type="tel"
               name="phone"
@@ -238,13 +192,12 @@ export function ContactForm() {
               className={fieldClass("phone")}
               aria-invalid={Boolean(touched.phone && errors.phone)}
             />
-            <FieldError name="phone" />
           </label>
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2">
           <label className="block">
-            <span className="text-sm font-medium text-slate-700">Main area of interest</span>
+            <span className="text-sm font-medium text-slate-700">Main area of interest <span className="text-slate-400">Optional</span></span>
             <select
               name="interest"
               value={form.interest}
@@ -260,7 +213,7 @@ export function ContactForm() {
         </div>
 
         <label className="block">
-          <span className="text-sm font-medium text-slate-700">What would you like help with?</span>
+          <span className="text-sm font-medium text-slate-700">What would you like help with? <span className="text-slate-400">Optional</span></span>
           <textarea
             name="message"
             value={form.message}
@@ -271,7 +224,6 @@ export function ContactForm() {
             className={`${fieldClass("message")} rounded-[24px]`}
             aria-invalid={Boolean(touched.message && errors.message)}
           />
-          <FieldError name="message" />
         </label>
 
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -280,9 +232,9 @@ export function ContactForm() {
             disabled={isSubmitting}
             className="inline-flex w-full items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-sm font-semibold text-white shadow-[0_16px_40px_rgba(32,24,31,0.16)] transition hover:-translate-y-0.5 hover:bg-slate-800 sm:w-auto"
           >
-            Show me the missed lead flow
+            {isSubmitting ? "Sending request..." : "Request My Demo"}
           </button>
-          <p className="text-sm text-slate-500">Takes 10 minutes. No setup required.</p>
+          <p className="text-sm text-slate-500">The personalized walkthrough takes about 10 minutes.</p>
         </div>
 
         {hasVisibleErrors ? (
@@ -303,6 +255,10 @@ export function ContactForm() {
           </div>
         ) : null}
       </form>
+      <p className="mt-5 text-xs leading-5 text-slate-500">
+        By submitting, you agree that Revenue After Dark may contact you about this request. See our{" "}
+        <a className="font-medium text-rose-700 hover:text-rose-800" href="/privacy">Privacy Notice</a>.
+      </p>
     </div>
   );
 }

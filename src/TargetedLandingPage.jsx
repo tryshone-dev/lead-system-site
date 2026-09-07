@@ -117,7 +117,7 @@ export default function TargetedLandingPage({ config }) {
               FAQ
             </a>
             <a href="#contact" className="transition hover:text-slate-900">
-              Book a Demo
+              Request a Demo
             </a>
           </nav>
         </header>
@@ -253,7 +253,7 @@ export default function TargetedLandingPage({ config }) {
           <section id="contact" className="py-16 sm:py-20">
             <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
               <div>
-                <SectionHeading eyebrow="CTA" title={config.cta.title} description={config.cta.description} />
+                <SectionHeading eyebrow="Next Step" title={config.cta.title} description={config.cta.description} />
                 <div className="mt-8">
                   <PrimaryButton href="#demo-request">{config.cta.buttonLabel}</PrimaryButton>
                 </div>
@@ -268,7 +268,7 @@ export default function TargetedLandingPage({ config }) {
                   <ul className="mt-4 space-y-3 text-sm leading-7 text-slate-600">
                     <li>Med spas handling consultation-driven service inquiries</li>
                     <li>Teams that want more structured after-hours lead capture</li>
-                    <li>Practices looking to turn website traffic into booked consultations</li>
+                    <li>Practices looking to turn website traffic into consultation requests</li>
                   </ul>
                 </div>
               </div>
@@ -283,7 +283,7 @@ export default function TargetedLandingPage({ config }) {
             <SectionHeading
               eyebrow="FAQ"
               title="Frequently asked questions"
-              description="Short answers for the practical questions med spa owners ask before they book a demo."
+              description="Short answers for the practical questions med spa owners ask before they request a demo."
             />
 
             <div className="mt-12 grid gap-4">
@@ -295,10 +295,13 @@ export default function TargetedLandingPage({ config }) {
         </main>
 
         <footer className="pb-8 pt-4 text-sm text-slate-500">
-          <p>
+          <p className="flex flex-wrap items-center gap-x-3 gap-y-2">
             Phone:{" "}
             <a href="tel:+12489424785" className="font-medium text-rose-700 transition hover:text-rose-800">
               (248) 942-4785
+            </a>
+            <a href="/privacy" className="font-medium text-rose-700 transition hover:text-rose-800">
+              Privacy Notice
             </a>
           </p>
         </footer>
